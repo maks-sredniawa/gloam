@@ -664,8 +664,45 @@ class Node:
         return self.text or self.desc or self.cls.rsplit(".", 1)[-1]
 
 
+ANR_BUTTONS = ("android:id/aerr_close", "android:id/aerr_wait")
+
+
 def dump_ui() -> list[Node]:
-    """Every visible node on screen, ours and the system's.
+    """Every visible node on screen, ours and the system's, with any ANR dialog already tapped away.
+
+    The API 36 emulator raises "Quickstep isn't responding" for its own launcher partway through a
+    cell, and the dialog takes focus over the app: `uiautomator dump` then shows nothing but the
+    dialog, so a tab bar is never found and a tap's verification dump reads as "moved" (CI runs
+    42157751694 and 42159923443, nine and six scenes lost). Handling it here, rather than in
+    [return_to_home] alone, is what keeps it out of every caller's judgement.
+
+    "Close app" before "Wait": in 42159923443 "Wait" brought the dialog back within a scene, every
+    scene, because the launcher never recovers on its own; closing it restarts the home app.
+    """
+    for _ in range(3):
+        nodes = dump_once()
+        if not dismiss_anr(nodes):
+            break
+    return nodes
+
+
+def dismiss_anr(nodes: list[Node]) -> bool:
+    for button in ANR_BUTTONS:
+        node = next((n for n in nodes if n.resource_id == button), None)
+        if node is None:
+            continue
+        title = next((n.text for n in nodes if n.resource_id == "android:id/alertTitle"), "ANR dialog")
+        print(f"     (dismissed: {title}, {node.text})")
+        x = (node.bounds.left + node.bounds.right) // 2
+        y = (node.bounds.top + node.bounds.bottom) // 2
+        shell(f"input touchscreen tap {x} {y}")
+        settle(1.2)
+        return True
+    return False
+
+
+def dump_once() -> list[Node]:
+    """One `uiautomator dump`, parsed.
 
     `uiautomator dump` writes to the device and `exec-out cat` reads it back byte-for-byte; going
     through `adb shell cat` corrupts the XML on the way out.
@@ -885,35 +922,6 @@ def showing_tab(nodes: list[Node], needle: str) -> bool:
     return selected is not None and selected.bounds.intersects(label.bounds)
 
 
-ANR_BUTTONS = ("android:id/aerr_wait", "android:id/aerr_close")
-
-
-def dismiss_anr(nodes: list[Node]) -> bool:
-    """Tap away a system "<app> isn't responding" dialog, if one is on screen.
-
-    The API 36 emulator raises one for its own launcher (Quickstep) partway through a cell, and it
-    then takes focus over every scene that follows: `uiautomator dump` shows nothing but the dialog,
-    so [return_to_home] never sees the tab bar, and Back does not close an ANR dialog. CI run
-    42157751694 lost nine scenes in a row this way, each captured with
-    `mCurrentFocus=Window{... Application Not Responding: com.android.launcher3}`.
-
-    "Wait" first: the stall is the emulator's, not the launcher's, and waiting keeps the home app's
-    process. "Close app" is the fallback for a dialog that offers nothing else.
-    """
-    for button in ANR_BUTTONS:
-        node = next((n for n in nodes if n.resource_id == button), None)
-        if node is None:
-            continue
-        title = next((n.text for n in nodes if n.resource_id == "android:id/alertTitle"), "ANR dialog")
-        print(f"     (dismissed: {title})")
-        x = (node.bounds.left + node.bounds.right) // 2
-        y = (node.bounds.top + node.bounds.bottom) // 2
-        shell(f"input touchscreen tap {x} {y}")
-        settle(1.2)
-        return True
-    return False
-
-
 def return_to_home() -> None:
     """Put the app on the Home tab, or fail the scene saying so.
 
@@ -939,8 +947,6 @@ def return_to_home() -> None:
         nodes = dump_ui()
         if find(nodes, TAB_BAR) is not None:
             break
-        if dismiss_anr(nodes):
-            continue
         back()
     else:
         visible = ", ".join(sorted({n.label for n in dump_ui() if n.package == PACKAGE and n.label})[:20])
