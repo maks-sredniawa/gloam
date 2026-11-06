@@ -13,7 +13,7 @@ Three scripts read this file, so its headings are load-bearing:
 | `scripts/play-metadata.py` | the whole thing, generating the `fastlane/metadata/` tree the publish workflow uploads |
 
 > **Nine locales, and four of them have under five characters of headroom.** German, Spanish, French
-> and Brazilian Portuguese all land between 3995 and 3999 of Play's 4000, against 406 spare in
+> and Brazilian Portuguese all land between 3997 and 4000 of Play's 4000, against 401 spare in
 > English. **An English sentence added to the full description is therefore a cut in four other
 > languages**, and the cut has to come from a restatement or an enumeration — never from the
 > touch-through paragraph, the backlight-floor limits or the closing health line, which are the three
@@ -99,7 +99,7 @@ The line that appears under the name in search results, and the most-read text i
 Dim the screen below Android's lowest brightness, for reading in the dark.
 ```
 
-### Full description — 3594/4000
+### Full description — 3599/4000
 
 ```
 Android's brightness slider stops at a floor. On most phones that floor is still too bright to read in a properly dark room. Gloam is the range underneath it.
@@ -193,7 +193,7 @@ A rewrite to fit rather than a word-for-word translation, and the imperative mat
 Przyciemnij ekran poniżej najniższej jasności Androida, by czytać po ciemku.
 ```
 
-### Full description — 3924/4000
+### Full description — 3929/4000
 
 **76 characters of headroom, against 406 in English**, so an English addition of a sentence is a
 Polish cut somewhere else. Two choices a reviewer should not "fix": the closing health line avoids
@@ -269,7 +269,7 @@ Gloam
 Ztmav obrazovku pod nejnižší jasnost Androidu, pro čtení ve tmě.
 ```
 
-### Full description — 3573/4000
+### Full description — 3578/4000
 
 ```
 Posuvník jasnosti v Androidu se zastaví na určitém minimu. Ve většině telefonů je toto minimum stále příliš jasné, než aby se dalo číst v opravdu temné místnosti. Gloam je ten rozsah pod ním.
@@ -340,14 +340,14 @@ Gloam
 Bildschirm dunkler als Androids Minimum – zum Lesen im Dunkeln.
 ```
 
-### Full description — 3996/4000
+### Full description — 3999/4000
 
 ```
 Androids Helligkeitsregler endet an einem Minimum. Auf den meisten Telefonen ist dieses Minimum noch zu hell, um in einem richtig dunklen Zimmer zu lesen. Gloam ist der Bereich darunter.
 
 WIE ES FUNKTIONIERT
 
-Gloam senkt die Hintergrundbeleuchtung auf die niedrigste Stufe, die dein Telefon zulässt, und legt dann eine Schicht über den Bildschirm für den restlichen Weg. Ein Regler bewegt beide Hälften, von kaum abgedunkelt bis nahezu dunkel.
+Gloam senkt die Hintergrundbeleuchtung auf die niedrigste Stufe, die dein Telefon zulässt, und legt dann eine Schicht über den Bildschirm für den restlichen Weg. Ein Regler bewegt beide Hälften, von kaum abgedunkelt bis fast dunkel.
 
 WAS DU BEKOMMST
 
@@ -411,7 +411,7 @@ Gloam
 Atenúa la pantalla por debajo del mínimo de Android, para leer a oscuras.
 ```
 
-### Full description — 3995/4000
+### Full description — 4000/4000
 
 ```
 El control de brillo de Android se detiene en un mínimo. En la mayoría de los teléfonos sigue siendo demasiado luminoso para leer en una habitación realmente oscura. Gloam es el margen que queda por debajo.
@@ -482,7 +482,7 @@ Gloam
 Assombrissez l'écran sous le minimum d'Android, pour lire dans le noir.
 ```
 
-### Full description — 3999/4000
+### Full description — 3997/4000
 
 ```
 Le curseur de luminosité d'Android s'arrête à un minimum. Sur la plupart des téléphones, il est encore trop lumineux pour lire dans une pièce vraiment sombre. Gloam est la plage en dessous.
@@ -517,7 +517,7 @@ Les dialogues d'autorisation du système, certains écrans protégés et l'écra
 
 Le voile ne prend jamais vos touchers : chacun passe directement à ce qui se trouve en dessous. Tant qu'il est actif, une notification mène toujours aux commandes et à leur bouton Arrêter. Une couche posée par-dessus tout ne doit jamais devenir un piège.
 
-Certains téléphones l'arrêtent. Les gestionnaires de batterie agressifs, ceux de Xiaomi en particulier, terminent le service d'eux-mêmes. Si le voile disparaît sans que vous y touchiez, ce sont les réglages de batterie du téléphone, pas Gloam.
+Certains téléphones l'arrêtent. Les gestionnaires de batterie agressifs, surtout ceux de Xiaomi, terminent le service d'eux-mêmes. Si le voile disparaît sans que vous y touchiez, ce sont les réglages de batterie du téléphone, pas Gloam.
 
 Gloam est un variateur. Il n'avance rien sur vos yeux, votre sommeil ou votre santé.
 
@@ -553,7 +553,7 @@ Gloam
 Oscura lo schermo sotto il minimo di Android, per leggere al buio.
 ```
 
-### Full description — 3972/4000
+### Full description — 3977/4000
 
 ```
 Il cursore della luminosità di Android si ferma a un minimo. Sulla maggior parte dei telefoni quel minimo è ancora troppo luminoso per leggere in una stanza davvero buia. Gloam è l'intervallo che sta sotto.
@@ -624,7 +624,7 @@ Gloam
 Escureça a tela abaixo do mínimo do Android, para ler no escuro.
 ```
 
-### Full description — 3998/4000
+### Full description — 3999/4000
 
 ```
 O controle de brilho do Android para em um mínimo. Na maioria dos celulares ele ainda é claro demais para ler em um quarto de verdade escuro. O Gloam é a faixa que fica abaixo dele.
@@ -659,7 +659,7 @@ As caixas de diálogo de permissão do sistema, algumas telas protegidas e a tel
 
 A camada nunca fica com os seus toques. Cada toque passa direto para o que está embaixo, e enquanto ela está ativa há sempre uma notificação que leva aos controles e ao seu botão Parar. Uma camada desenhada sobre todo o resto não pode prender ninguém atrás dela.
 
-Alguns celulares a interrompem. Gerenciadores de bateria agressivos, o da Xiaomi especialmente, encerram o serviço por conta própria. Se a camada desaparecer sem você tocar em nada, são as configurações de bateria do seu celular e não o Gloam.
+Alguns celulares a interrompem. Gerenciadores de bateria agressivos, sobretudo o da Xiaomi, encerram o serviço por conta própria. Se a camada desaparecer sem você tocar em nada, são as configurações de bateria do seu celular e não o Gloam.
 
 O Gloam é um escurecedor. Ele não afirma nada sobre seus olhos, seu sono ou sua saúde.
 
@@ -695,7 +695,7 @@ Gloam
 Затемни екран нижче мінімальної яскравості Android, щоб читати в темряві.
 ```
 
-### Full description — 3922/4000
+### Full description — 3927/4000
 
 ```
 Повзунок яскравості Android зупиняється на певному мінімумі. У більшості телефонів цей мінімум усе ще надто світлий, щоб читати в справді темній кімнаті. Gloam — це діапазон під ним.
