@@ -665,10 +665,11 @@ class Node:
 
 
 ANR_BUTTONS = ("android:id/aerr_close", "android:id/aerr_wait")
+FOCUSED_WINDOW_RE = re.compile(r"mCurrentFocus=Window\{\S+ u\d+ (.*?)\}")
 
 
 def dump_ui() -> list[Node]:
-    """Every visible node on screen, ours and the system's, with any ANR dialog already tapped away.
+    """Every visible node on screen, ours and the system's, with another app's ANR dialog tapped away.
 
     The API 36 emulator raises "Quickstep isn't responding" for its own launcher partway through a
     cell, and the dialog takes focus over the app: `uiautomator dump` then shows nothing but the
@@ -678,20 +679,41 @@ def dump_ui() -> list[Node]:
 
     "Close app" before "Wait": in 42159923443 "Wait" brought the dialog back within a scene, every
     scene, because the launcher never recovers on its own; closing it restarts the home app.
+
+    A dismissal is always followed by a fresh dump, including on the last pass: the nodes that found
+    the button describe a dialog that is no longer on screen, and returning them would hand a caller
+    coordinates to tap on whatever replaced it.
     """
     for _ in range(3):
         nodes = dump_once()
         if not dismiss_anr(nodes):
-            break
-    return nodes
+            return nodes
+    return dump_once()
+
+
+def focused_window() -> str:
+    match = FOCUSED_WINDOW_RE.search(shell("dumpsys window | grep mCurrentFocus"))
+    return match.group(1) if match else ""
 
 
 def dismiss_anr(nodes: list[Node]) -> bool:
+    """Tap "Close app" on another app's ANR or crash dialog; fail the scene on this app's own.
+
+    `aerr_close` and `aerr_wait` are AOSP's ids for every "isn't responding" and "keeps stopping"
+    dialog, so the buttons alone cannot say whose it is. The focused window's title can: `dumpsys
+    window` names the package in it (`Application Not Responding: com.android.launcher3`), and does
+    so in every locale, where the dialog's text would not. Closing this app's own dialog would turn
+    a main-thread hang into a needle error on the next tap — or, on CI, into one `flaky:` line after
+    the retry relaunched it — which is the one defect this driver must never tidy away.
+    """
     for button in ANR_BUTTONS:
         node = next((n for n in nodes if n.resource_id == button), None)
         if node is None:
             continue
         title = next((n.text for n in nodes if n.resource_id == "android:id/alertTitle"), "ANR dialog")
+        window = focused_window()
+        if PACKAGE in window:
+            raise StepFailed(f"{title} ({window})")
         print(f"     (dismissed: {title}, {node.text})")
         x = (node.bounds.left + node.bounds.right) // 2
         y = (node.bounds.top + node.bounds.bottom) // 2
@@ -706,9 +728,17 @@ def dump_once() -> list[Node]:
 
     `uiautomator dump` writes to the device and `exec-out cat` reads it back byte-for-byte; going
     through `adb shell cat` corrupts the XML on the way out.
+
+    The file is removed before every dump. A dump that fails while the screen is still moving
+    ("could not get idle state") prints to stdout and leaves the *previous* file on disk, and the
+    moment that is most likely — right after "Close app", with the launcher restarting and the dialog
+    animating out — is exactly when reading the old file back would make [dismiss_anr] tap the
+    dialog's coordinates on whatever is there now. `device-gate.py`'s `_system_xml` learned the same
+    lesson on a scrolling list. A missing file cannot be misread.
     """
     for attempt in range(3):
         try:
+            shell("rm -f /sdcard/e2e-dump.xml")
             shell("uiautomator dump /sdcard/e2e-dump.xml")
             raw = adb("exec-out", "cat", "/sdcard/e2e-dump.xml", binary=True)
             xml = raw.decode("utf-8", "replace")
@@ -1959,10 +1989,15 @@ def capture_unreached(scene: Scene, out_dir: Path) -> None:
 
     "on screen:" in the error lists only this app's labels, so a scene lost behind a system window or
     an empty dump reports nothing at all.
+
+    The dump file is removed first, as in [dump_once]: a dump that fails here would otherwise read
+    back the last screen [dump_ui] saw, already through [dismiss_anr], which is the screen this
+    capture exists to get past.
     """
     try:
         (out_dir / f"{scene.name}-unreached.png").write_bytes(adb("exec-out", "screencap", "-p", binary=True))
         focus = shell("dumpsys window | grep -E 'mCurrentFocus|mFocusedApp'")
+        shell("rm -f /sdcard/e2e-dump.xml")
         dump = subprocess.run(["adb", "shell", "uiautomator dump /sdcard/e2e-dump.xml"], capture_output=True, text=True)
         xml = adb("exec-out", "cat", "/sdcard/e2e-dump.xml", binary=True).decode("utf-8", "replace")
         (out_dir / f"{scene.name}-unreached.txt").write_text(
@@ -1985,6 +2020,8 @@ def run_scene(scene: Scene, config: Config, out_dir: Path, retries: int = 0) -> 
     # record it clean. That is the exact failure retrying is supposed to avoid, arriving by the
     # other road. It costs one scene: `watch-expiry`.
     allowed = 1 + (0 if scene.keeps_watch_prompt else max(retries, 0))
+    for suffix in ("-unreached.png", "-unreached.txt"):
+        (out_dir / f"{scene.name}{suffix}").unlink(missing_ok=True)
     for attempt in range(1, allowed + 1):
         error = reach_scene(scene)
         if error is None:
@@ -2011,7 +2048,10 @@ def run_scene(scene: Scene, config: Config, out_dir: Path, retries: int = 0) -> 
     if missing:
         error = f"no {' or '.join(missing)} inset could be read"
         return {"scene": scene.name, "family": scene.family, "error": error}
-    findings = check(dump_ui(), insets)
+    try:
+        findings = check(dump_ui(), insets)
+    except StepFailed as error:
+        return {"scene": scene.name, "family": scene.family, "error": str(error)}
     result = {
         "scene": scene.name,
         "family": scene.family,
