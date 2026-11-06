@@ -97,4 +97,4 @@ details are in the
 
 ## The source
 
-Built in the open at **[github.com/maksforge/gloam](https://github.com/maksforge/gloam)**.
+Built in the open at **[github.com/maks-sredniawa/gloam](https://github.com/maks-sredniawa/gloam)**.
