@@ -1917,6 +1917,24 @@ def reach_scene(scene: Scene) -> str | None:
     return None
 
 
+def capture_unreached(scene: Scene, out_dir: Path) -> None:
+    """Keep what the screen showed when a scene could not be reached.
+
+    "on screen:" in the error lists only this app's labels, so a scene lost behind a system window or
+    an empty dump reports nothing at all.
+    """
+    try:
+        (out_dir / f"{scene.name}-unreached.png").write_bytes(adb("exec-out", "screencap", "-p", binary=True))
+        focus = shell("dumpsys window | grep -E 'mCurrentFocus|mFocusedApp'")
+        dump = subprocess.run(["adb", "shell", "uiautomator dump /sdcard/e2e-dump.xml"], capture_output=True, text=True)
+        xml = adb("exec-out", "cat", "/sdcard/e2e-dump.xml", binary=True).decode("utf-8", "replace")
+        (out_dir / f"{scene.name}-unreached.txt").write_text(
+            f"{focus}\nuiautomator dump exit={dump.returncode}\n{dump.stdout}{dump.stderr}\n{xml}"
+        )
+    except subprocess.CalledProcessError as error:
+        print(f"  {scene.name:28s} could not capture the unreached screen: {error}")
+
+
 def run_scene(scene: Scene, config: Config, out_dir: Path, retries: int = 0) -> dict:
     # **A retry is only honest where the scene puts the phone back itself.** [reach_scene] opens a
     # `full` scene with [return_to_home] and an `empty` one with its own [wipe], so a second attempt
@@ -1937,6 +1955,7 @@ def run_scene(scene: Scene, config: Config, out_dir: Path, retries: int = 0) -> 
         if attempt < allowed:
             print(f"  {scene.name:28s} retrying ({attempt}/{allowed - 1})  {error[:70]}")
     if error is not None:
+        capture_unreached(scene, out_dir)
         result = {"scene": scene.name, "family": scene.family, "error": error}
         if attempt > 1:
             result["attempts"] = attempt
