@@ -885,6 +885,35 @@ def showing_tab(nodes: list[Node], needle: str) -> bool:
     return selected is not None and selected.bounds.intersects(label.bounds)
 
 
+ANR_BUTTONS = ("android:id/aerr_wait", "android:id/aerr_close")
+
+
+def dismiss_anr(nodes: list[Node]) -> bool:
+    """Tap away a system "<app> isn't responding" dialog, if one is on screen.
+
+    The API 36 emulator raises one for its own launcher (Quickstep) partway through a cell, and it
+    then takes focus over every scene that follows: `uiautomator dump` shows nothing but the dialog,
+    so [return_to_home] never sees the tab bar, and Back does not close an ANR dialog. CI run
+    42157751694 lost nine scenes in a row this way, each captured with
+    `mCurrentFocus=Window{... Application Not Responding: com.android.launcher3}`.
+
+    "Wait" first: the stall is the emulator's, not the launcher's, and waiting keeps the home app's
+    process. "Close app" is the fallback for a dialog that offers nothing else.
+    """
+    for button in ANR_BUTTONS:
+        node = next((n for n in nodes if n.resource_id == button), None)
+        if node is None:
+            continue
+        title = next((n.text for n in nodes if n.resource_id == "android:id/alertTitle"), "ANR dialog")
+        print(f"     (dismissed: {title})")
+        x = (node.bounds.left + node.bounds.right) // 2
+        y = (node.bounds.top + node.bounds.bottom) // 2
+        shell(f"input touchscreen tap {x} {y}")
+        settle(1.2)
+        return True
+    return False
+
+
 def return_to_home() -> None:
     """Put the app on the Home tab, or fail the scene saying so.
 
@@ -910,6 +939,8 @@ def return_to_home() -> None:
         nodes = dump_ui()
         if find(nodes, TAB_BAR) is not None:
             break
+        if dismiss_anr(nodes):
+            continue
         back()
     else:
         visible = ", ".join(sorted({n.label for n in dump_ui() if n.package == PACKAGE and n.label})[:20])
@@ -2141,7 +2172,7 @@ def main() -> int:
         (cell["config"], scene["scene"], scene["attempts"])
         for cell in report["configs"]
         for scene in cell["scenes"]
-        if scene.get("attempts", 1) > 1
+        if scene.get("attempts", 1) > 1 and "error" not in scene
     ]
     for config_name, scene_name, attempts in flaky:
         print(f"flaky: {config_name}/{scene_name} reached on attempt {attempts}")
