@@ -146,7 +146,7 @@ PERMISSIONS
 - Run at startup. Puts back a shade that was on, and sets the schedule again, after a restart.
 - Approximate location, optional. Only for sunset to sunrise, only if you allow it, never precise and never in the background.
 
-Source available, built in the open: github.com/maksforge/gloam
+Source available, built in the open: github.com/maks-sredniawa/gloam
 ```
 
 ## Polish
@@ -245,7 +245,7 @@ UPRAWNIENIA
 - Uruchamianie przy starcie. Po ponownym uruchomieniu przywraca włączoną zasłonę i ustawia harmonogram na nowo.
 - Przybliżona lokalizacja, opcjonalnie. Tylko dla trybu od zachodu do wschodu słońca, tylko za twoją zgodą, nigdy dokładna i nigdy w tle.
 
-Kod źródłowy jest publicznie dostępny: github.com/maksforge/gloam
+Kod źródłowy jest publicznie dostępny: github.com/maks-sredniawa/gloam
 ```
 
 ## Czech
@@ -316,7 +316,7 @@ OPRÁVNĚNÍ
 - Spuštění po startu. Vrátí závoj, který byl zapnutý, a po restartu znovu nastaví plán.
 - Přibližná poloha, nepovinně. Jen pro režim od západu do východu slunce, jen pokud ji povolíš, nikdy přesná a nikdy na pozadí.
 
-Zdrojový kód je k dispozici, vývoj probíhá otevřeně: github.com/maksforge/gloam
+Zdrojový kód je k dispozici, vývoj probíhá otevřeně: github.com/maks-sredniawa/gloam
 ```
 
 ## German
@@ -387,7 +387,7 @@ BERECHTIGUNGEN
 - Beim Start ausführen. Legt eine Schicht, die an war, wieder an und setzt den Zeitplan neu.
 - Ungefährer Standort, optional. Nur für Sonnenuntergang bis Sonnenaufgang, nur wenn du es erlaubst, niemals genau und niemals im Hintergrund.
 
-Quelltext verfügbar, offen entwickelt: github.com/maksforge/gloam
+Quelltext verfügbar, offen entwickelt: github.com/maks-sredniawa/gloam
 ```
 
 ## Spanish
@@ -458,7 +458,7 @@ PERMISOS
 - Ejecutar al inicio. Vuelve a poner una capa que estaba puesta y fija de nuevo el horario después de reiniciar.
 - Ubicación aproximada, opcional. Solo para el atardecer y el amanecer, solo si la permites, nunca precisa y nunca en segundo plano.
 
-Código disponible, desarrollado en abierto: github.com/maksforge/gloam
+Código disponible, desarrollado en abierto: github.com/maks-sredniawa/gloam
 ```
 
 ## French
@@ -529,7 +529,7 @@ AUTORISATIONS
 - Exécution au démarrage. Repose un voile actif et redéfinit la programmation après un redémarrage.
 - Position approximative, facultative. Uniquement pour le coucher et le lever du soleil, si vous l'autorisez, jamais précise et jamais en arrière-plan.
 
-Code source disponible, développé au grand jour : github.com/maksforge/gloam
+Code source disponible, développé au grand jour : github.com/maks-sredniawa/gloam
 ```
 
 ## Italian
@@ -600,7 +600,7 @@ AUTORIZZAZIONI
 - Esecuzione all'avvio. Rimette un velo che era attivo e reimposta la programmazione dopo un riavvio.
 - Posizione approssimativa, facoltativa. Solo per il tramonto e l'alba, solo se la consenti, mai precisa e mai in background.
 
-Codice disponibile, sviluppato alla luce del sole: github.com/maksforge/gloam
+Codice disponibile, sviluppato alla luce del sole: github.com/maks-sredniawa/gloam
 ```
 
 ## Brazilian Portuguese
@@ -671,7 +671,7 @@ PERMISSÕES
 - Executar na inicialização. Recoloca uma camada que estava ativa e define de novo a programação depois de reiniciar.
 - Localização aproximada, opcional. Apenas para o pôr do sol e o nascer do sol, apenas se você permitir, nunca precisa e nunca em segundo plano.
 
-Código disponível, desenvolvido abertamente: github.com/maksforge/gloam
+Código disponível, desenvolvido abertamente: github.com/maks-sredniawa/gloam
 ```
 
 ## Ukrainian
@@ -742,7 +742,7 @@ Gloam — це затемнювач. Він нічого не стверджує
 - Запуск під час завантаження. Повертає запону, яка була ввімкнена, і знову налаштовує розклад після перезавантаження.
 - Приблизне розташування, необов'язково. Лише для заходу та сходу сонця, лише якщо ти дозволиш, ніколи не точне і ніколи у фоні.
 
-Код доступний, розробка відкрита: github.com/maksforge/gloam
+Код доступний, розробка відкрита: github.com/maks-sredniawa/gloam
 ```
 
 ## Release notes (Play's "What's new", 500 chars per locale)
