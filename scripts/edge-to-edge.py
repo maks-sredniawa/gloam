@@ -705,6 +705,9 @@ def dismiss_anr(nodes: list[Node]) -> bool:
     so in every locale, where the dialog's text would not. Closing this app's own dialog would turn
     a main-thread hang into a needle error on the next tap — or, on CI, into one `flaky:` line after
     the retry relaunched it — which is the one defect this driver must never tidy away.
+
+    An unreadable title fails the same way, not the lenient one: `mCurrentFocus=null` mid-transition
+    or an OEM's own `dumpsys` layout must not be the case in which this app's dialog gets closed.
     """
     for button in ANR_BUTTONS:
         node = next((n for n in nodes if n.resource_id == button), None)
@@ -712,8 +715,8 @@ def dismiss_anr(nodes: list[Node]) -> bool:
             continue
         title = next((n.text for n in nodes if n.resource_id == "android:id/alertTitle"), "ANR dialog")
         window = focused_window()
-        if PACKAGE in window:
-            raise StepFailed(f"{title} ({window})")
+        if not window or PACKAGE in window:
+            raise StepFailed(f"{title} ({window or 'focused window unreadable'})")
         print(f"     (dismissed: {title}, {node.text})")
         x = (node.bounds.left + node.bounds.right) // 2
         y = (node.bounds.top + node.bounds.bottom) // 2
