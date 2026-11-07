@@ -683,8 +683,8 @@ artifact with AndroidX's. Read them off `AppPreferences.kt` and the manifest, ne
       2026-09-17**: the shade is in the capture (×0.929 at dim 72), and the fall from 500 nits to
       2 nits is not.
 
-- [x] **Write the privacy policy** and confirm `maksforge.com/gloam/privacy-policy` serves it.
-      Done 2026-08-30: `docs/privacy-policy.md` is written, and once PR #6 merged
+- [x] **Write the privacy policy** and confirm GitHub Pages is serving `docs/`. Done 2026-08-30:
+      `docs/privacy-policy.md` is written, and once PR #6 merged
       <https://srednimax.github.io/gloam/privacy-policy.html> answered 200 — the URL the Console's
       *Set privacy policy* field wants. That URL was retired on 2026-11-07 and now returns 404; the
       policy is at <https://maksforge.com/gloam/privacy-policy>. Play requires a *hosted* URL, and
