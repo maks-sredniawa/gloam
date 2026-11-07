@@ -6,9 +6,9 @@ title: Gloam
 # Gloam
 
 <!--
-    The site root, served by GitHub Pages from `docs/`. It exists for two reasons: Play's listing
-    asks for a Website, and the privacy policy needs a hosted URL. Both come free from a public
-    repo — no hosting, no domain, no bill.
+    The site root, published from `docs/` at maksforge.com/gloam/. It exists for two reasons:
+    Play's listing asks for a Website, and the privacy policy needs a hosted URL. Both come free
+    from a public repo — no hosting, no domain, no bill.
 
     It is not the store listing (that is `store-listing.md`, which scripts parse) and it is not the
     README (that is for someone reading the code). Write it for someone who found the app in the

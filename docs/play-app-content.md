@@ -195,9 +195,10 @@ Would change: a second foreground service, or a different type on this one.
 - **Contact email:** `gloam.dimmer@gmail.com`, public on the listing. It changes to
   `gloam.support@maksforge.com` by hand the day that address merges ([`DOD.md`](DOD.md)).
 - **Privacy policy:** `https://maksforge.com/gloam/privacy-policy.html`, served from `docs/` by
-  Pages. It updates on a merge to `main`, with no release, which is why it has to be right before the
-  app it describes ships rather than after. Switched in the Console on 2026-10-25 from
-  `https://maksforge.github.io/gloam/privacy-policy.html`, which still redirects here.
+  maksforge.com. It updates within about 15 minutes of a merge to `main`, with no release, which is
+  why it has to be right before the app it describes ships rather than after. Switched in the Console
+  on 2026-10-25 from `https://maksforge.github.io/gloam/privacy-policy.html`, which was retired on
+  2026-11-07 and now returns 404.
 
 ---
 

@@ -146,9 +146,9 @@ ADR-0008's amendment. CI runs the window tests on API 26 and the phone on 36; wh
 good is in [`store-listing.md`](store-listing.md); these are the one-off steps.
 
 - [ ] **The Console's contact email changes in Store settings the day this merges**, not at the
-      upload: Pages republishes `privacy-policy.md` and `index.md` from `main` on merge, and the
-      policy says the address is also the listing's. Then update the Store settings line in
-      [`play-app-content.md`](play-app-content.md).
+      upload: maksforge.com republishes `privacy-policy.md` and `index.md` within about 15 minutes
+      of a merge to `main`, and the policy says the address is also the listing's. Then update the
+      Store settings line in [`play-app-content.md`](play-app-content.md).
 - [ ] **The IARC rating contact moves at the next resubmission** — the one the tip already owes
       below. Record the new contact under *Content rating* in `play-app-content.md`.
 - [ ] **The route has carried a real report.** Only Gmail's send-as confirmation has come through
@@ -683,11 +683,13 @@ artifact with AndroidX's. Read them off `AppPreferences.kt` and the manifest, ne
       2026-09-17**: the shade is in the capture (×0.929 at dim 72), and the fall from 500 nits to
       2 nits is not.
 
-- [x] **Write the privacy policy** and confirm GitHub Pages is serving `docs/`. Done 2026-08-30:
-      `docs/privacy-policy.md` is written, and since PR #6 merged
-      <https://srednimax.github.io/gloam/privacy-policy.html> answers 200 — the URL the Console's
-      *Set privacy policy* field wants. Play requires a *hosted* URL, and an offline app has no
-      server of its own, so this one waits on a merge to `main` rather than on a commit.
+- [x] **Write the privacy policy** and confirm `maksforge.com/gloam/privacy-policy` serves it.
+      Done 2026-08-30: `docs/privacy-policy.md` is written, and once PR #6 merged
+      <https://srednimax.github.io/gloam/privacy-policy.html> answered 200 — the URL the Console's
+      *Set privacy policy* field wants. That URL was retired on 2026-11-07 and now returns 404; the
+      policy is at <https://maksforge.com/gloam/privacy-policy>. Play requires a *hosted* URL, and
+      an offline app has no server of its own, so this one waits on a merge to `main` rather than on
+      a commit.
       `docs/index.md` was the template's `<App name>` placeholder while Pages served it publicly;
       it was written in PR #7, so the site root is Gloam's own and the listing's Website field has
       somewhere real to point.
