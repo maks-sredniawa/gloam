@@ -1769,3 +1769,67 @@ Help and feedback, in Settings, has a new layout. It now shows the support addre
 ```
 «Довідка та відгуки» в Налаштуваннях має нове компонування. Тепер там видно адресу підтримки: торкнися її, щоб скопіювати, якщо на телефоні немає поштового застосунку. Новий розділ «Про застосунок» веде на вебсторінку Gloam, до політики конфіденційності та інших безкоштовних застосунків MaksForge, показує версію (торкнися, щоб скопіювати) і відкриває Подяки, які тепер починаються з «Хто створив застосунок» і показують повну назву кожної ліцензії з посиланням на її умови.
 ```
+
+### 1.7.1 — Help and feedback, rebuilt
+
+**One owner-visible change: Help and feedback.** The screen now shows the support address and copies
+it on a tap, and gains an About section: web page, privacy policy, Credits, more MaksForge apps and a
+copyable version. Credits now open with who made the app, and give each licence its full name
+with a link to its terms. Each translation quotes the app's own labels
+for the screen, the section and the Credits heading, so the note and the screen agree. Left out: the
+tip row's new wording (same row, same behaviour) and the richer details a problem report pre-fills,
+which a reader meets as a draft they can still edit.
+
+**English** — 396/500:
+
+```
+Help and feedback, in Settings, has a new layout. It now shows the support address, which you can tap to copy when your phone has no email app. A new About section links to Gloam's web page, the privacy policy and other free MaksForge apps, shows the version (tap to copy), and opens Credits, which now begin with who made the app and show each licence by its full name, with a link to its terms.
+```
+
+**Polish** — 459/500:
+
+```
+„Pomoc i opinie” w Ustawieniach ma nowy układ. Widać tam teraz adres pomocy: dotknij go, aby skopiować, jeśli w telefonie nie ma aplikacji pocztowej. Nowa sekcja „O aplikacji” prowadzi do strony Gloam w sieci, polityki prywatności i innych darmowych aplikacji MaksForge, pokazuje wersję (dotknij, aby skopiować) i otwiera Podziękowania, które zaczynają się teraz od sekcji „Kto zrobił aplikację” i podają pełną nazwę każdej licencji z linkiem do jej warunków.
+```
+
+**Czech** — 456/500:
+
+```
+„Pomoc a zpětná vazba“ v Nastavení má nové uspořádání. Teď ukazuje adresu podpory, kterou klepnutím zkopíruješ, když v telefonu není e-mailová aplikace. Nová sekce „O aplikaci“ odkazuje na webovou stránku Gloamu, zásady ochrany osobních údajů a další bezplatné aplikace MaksForge, ukazuje verzi (klepnutím ji zkopíruješ) a otevírá Poděkování, která teď začínají sekcí „Kdo aplikaci vytvořil“ a u každé licence uvádějí plný název s odkazem na její podmínky.
+```
+
+**German** — 494/500:
+
+```
+„Hilfe und Rückmeldung“ in den Einstellungen ist neu aufgebaut. Dort steht jetzt die Support-Adresse, die du per Tippen kopieren kannst, wenn dein Telefon keine E-Mail-App hat. Der neue Bereich „Über die App“ verlinkt die Webseite von Gloam, die Datenschutzerklärung und weitere kostenlose MaksForge-Apps, zeigt die Version (tippen zum Kopieren) und öffnet die Danksagungen, die jetzt mit „Wer die App gemacht hat“ beginnen und jede Lizenz mit vollem Namen und Link zu ihren Bedingungen zeigen.
+```
+
+**Spanish** — 485/500:
+
+```
+«Ayuda y comentarios», en Ajustes, tiene un nuevo diseño. Ahora muestra la dirección de soporte, que puedes copiar con un toque si tu teléfono no tiene app de correo. Una nueva sección «Acerca de» enlaza a la página web de Gloam, la política de privacidad y otras aplicaciones gratuitas de MaksForge, muestra la versión (toca para copiar) y abre los Créditos, que ahora empiezan con «Quién hizo la aplicación» y muestran cada licencia con su nombre completo y un enlace a sus términos.
+```
+
+**French** — 496/500:
+
+```
+« Aide et commentaires », dans Paramètres, a été réorganisé. Il affiche l'adresse d'assistance, à copier d'un appui si votre téléphone n'a pas d'application de messagerie. Une section « À propos » mène à la page web de Gloam, à la politique de confidentialité et à d'autres applications gratuites MaksForge, affiche la version (appuyez pour copier) et ouvre les Crédits, qui commencent par « Qui a fait l'application » et donnent le nom complet de chaque licence avec un lien vers ses conditions.
+```
+
+**Italian** — 478/500:
+
+```
+«Aiuto e commenti», in Impostazioni, ha una nuova disposizione. Ora mostra l'indirizzo di assistenza, che puoi copiare con un tocco se il telefono non ha un'app di posta. Una nuova sezione «Informazioni» porta alla pagina web di Gloam, all'informativa sulla privacy e ad altre app gratuite MaksForge, mostra la versione (tocca per copiare) e apre i Riconoscimenti, che ora iniziano con «Chi ha fatto l'app» e mostrano ogni licenza con il nome completo e un link ai suoi termini.
+```
+
+**Brazilian Portuguese** — 463/500:
+
+```
+“Ajuda e comentários”, em Configurações, tem um novo layout. Agora mostra o endereço de suporte, que você pode copiar com um toque se o celular não tiver app de e-mail. Uma nova seção “Sobre” leva à página do Gloam na web, à política de privacidade e a outros aplicativos gratuitos MaksForge, mostra a versão (toque para copiar) e abre os Créditos, que agora começam com “Quem fez o aplicativo” e mostram cada licença com o nome completo e um link para os termos.
+```
+
+**Ukrainian** — 475/500:
+
+```
+«Довідка та відгуки» в Налаштуваннях має нове компонування. Тепер там видно адресу підтримки: торкнися її, щоб скопіювати, якщо на телефоні немає поштового застосунку. Новий розділ «Про застосунок» веде на вебсторінку Gloam, до політики конфіденційності та інших безкоштовних застосунків MaksForge, показує версію (торкнися, щоб скопіювати) і відкриває Подяки, які тепер починаються з «Хто створив застосунок» і показують повну назву кожної ліцензії з посиланням на її умови.
+```
