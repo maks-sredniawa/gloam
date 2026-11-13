@@ -1,9 +1,9 @@
 package app.gloam.work
 
-import android.content.ActivityNotFoundException
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import app.gloam.ui.common.startActivitySafely
 
 /**
  * Xiaomi's autostart manager. The activity that decides, on HyperOS, whether this app's background
@@ -13,8 +13,7 @@ import android.content.Intent
  * **This file was split out of `BatteryExemption.kt`**, which now holds only the battery-optimisation
  * half. Reboot restore made the autostart hand-off live while that half stays Phase 4's, and a file
  * named for the dead half is exactly the ambiguity a reader cannot resolve — an unused defence and a
- * working one look identical from the outside. [startActivitySafely] lives here rather than there
- * because both halves need it.
+ * working one look identical from the outside.
  */
 private const val MIUI_SECURITY_CENTER = "com.miui.securitycenter"
 private const val MIUI_AUTOSTART_ACTIVITY = "com.miui.permcenter.autostart.AutoStartManagementActivity"
@@ -48,24 +47,3 @@ fun Context.openAutostartSettings(): Boolean =
 
 private fun autostartIntent(): Intent =
     Intent().setComponent(ComponentName(MIUI_SECURITY_CENTER, MIUI_AUTOSTART_ACTIVITY))
-
-/**
- * `startActivity`, reporting failure rather than taking the app down with it.
- *
- * An OEM screen that is present but not exported to us throws `SecurityException`, which is the same
- * outcome from here as it not being there at all.
- *
- * `internal` rather than private because three hand-offs across two packages launch something they
- * cannot be sure exists — this file's autostart screen, [openBatteryOptimisationSettings]'s fallback
- * list, and `ui/support/SupportHandoff.kt`'s `mailto:`. Three copies of a two-catch try/catch is how
- * one of them quietly stops catching something.
- */
-internal fun Context.startActivitySafely(intent: Intent): Boolean =
-    try {
-        startActivity(intent)
-        true
-    } catch (e: ActivityNotFoundException) {
-        false
-    } catch (e: SecurityException) {
-        false
-    }

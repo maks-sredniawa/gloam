@@ -1,12 +1,10 @@
 package app.gloam.ui.settings
 
 import android.app.StatusBarManager
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -39,10 +37,8 @@ import app.gloam.theme.Spacing
 import app.gloam.ui.appViewModelExtras
 import app.gloam.ui.common.SectionHeader
 import app.gloam.ui.common.SwitchRow
-import app.gloam.ui.support.SupportRequest
-import app.gloam.ui.support.hintRes
-import app.gloam.ui.support.sendSupportMail
-import app.gloam.ui.support.titleRes
+import app.gloam.ui.support.AboutSection
+import app.gloam.ui.support.LanguageReportRow
 import app.gloam.work.hasAutostartSettings
 import app.gloam.work.openAutostartSettings
 
@@ -128,12 +124,7 @@ fun SettingsScreen(
 
             RestoreDefaultsRow(onRestore = viewModel::restoreDefaults)
 
-            SectionHeader(stringResource(R.string.settings_about))
-            // Above the licences, because it is the row a tester needs and the other is the row a
-            // licence obligation needs. Both are in *About* for the same reason: it is where someone
-            // looks when they want to know something about the app rather than change it.
-            SettingsRow(stringResource(R.string.settings_support), onClick = onOpenSupport)
-            SettingsRow(stringResource(R.string.settings_licences), onClick = onOpenLicences)
+            AboutSection(onOpenSupport, onOpenLicences)
 
             // The developer-only section. In a release build this composable is a no-op that
             // renders nothing — see `src/release/…/DebugSettings.kt`. It is a source-set seam
@@ -349,68 +340,6 @@ private fun LanguageRow() {
             )
         }
     }
-}
-
-/**
- * *Something read wrong?* — the channel that stands in for a native read-through (ADR-0014).
- *
- * It is directly under the picker on purpose. Seven of the nine languages ship without a native
- * speaker having read them, so the fluency half of that review happens in the field, one report at a
- * time — and this is the screen somebody is on at the moment they notice. A row on Help and feedback
- * as well would be a second name for the same thing.
- *
- * The mail carries the resolved locale in its own block (`SupportHandoff`), so nobody has to say
- * which language they are reading, and `Gloam #language` sorts the reports apart from bugs.
- */
-@Composable
-private fun LanguageReportRow() {
-    val context = LocalContext.current
-    // Same contract as the Support screen's: it says "the tap you just made went nowhere", which is
-    // only true of that tap, so it is deliberately not `rememberSaveable` and a rotation clears it.
-    var mailMissing by remember { mutableStateOf(false) }
-
-    Column(
-        modifier =
-            Modifier
-                .fillMaxWidth()
-                .clickable { mailMissing = !context.sendSupportMail(SupportRequest.Language) }
-                .padding(horizontal = Spacing.base, vertical = Spacing.snug),
-    ) {
-        Text(
-            text = stringResource(SupportRequest.Language.titleRes()),
-            style = MaterialTheme.typography.bodyLarge,
-        )
-        Text(
-            text = stringResource(SupportRequest.Language.hintRes()),
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-        // Inline and in the error colour, the same way the Support screen reports it: there is no
-        // snackbar host anywhere in this app, and the failure belongs to the row that was tapped.
-        if (mailMissing) {
-            Text(
-                text = stringResource(R.string.support_no_mail_app),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.error,
-            )
-        }
-    }
-}
-
-@Composable
-private fun SettingsRow(
-    title: String,
-    onClick: () -> Unit,
-) {
-    Text(
-        text = title,
-        style = MaterialTheme.typography.bodyLarge,
-        modifier =
-            Modifier
-                .fillMaxWidth()
-                .clickable(onClick = onClick)
-                .padding(horizontal = Spacing.base, vertical = Spacing.base),
-    )
 }
 
 private fun ThemeMode.labelRes(): Int =

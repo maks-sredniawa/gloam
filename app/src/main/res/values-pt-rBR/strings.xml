@@ -159,22 +159,34 @@
 
     <string name="support_title">Ajuda e comentários</string>
     <string name="support_report">Relatar um problema</string>
-    <string name="support_report_hint">Abre seu aplicativo de e-mail com o que o Gloam já sabe sobre seu celular preenchido.</string>
+    <string name="support_report_hint">Abre seu aplicativo de e-mail com a versão do aplicativo, a versão do Android, o modelo do celular e o idioma já preenchidos. Nada é enviado até você tocar em “Enviar”.</string>
     <string name="support_feature">Sugerir um recurso</string>
-    <string name="support_feature_hint">Todo recurso do Gloam é gratuito e sempre será, então a única pergunta é se ele faz sentido aqui.</string>
+    <string name="support_feature_hint">Conte o que você gostaria que o aplicativo fizesse e para que você usaria isso.</string>
     <string name="support_body_bug">O que aconteceu e o que você esperava em vez disso:</string>
-    <string name="support_body_feature">O que você gostaria que o Gloam fizesse?</string>
+    <string name="support_body_feature">O que você gostaria que o aplicativo fizesse?</string>
     <string name="support_body_language">Qual palavra está escrita errado, e em qual tela?</string>
-    <string name="support_no_mail_app">Não há aplicativo de e-mail neste celular para abrir.</string>
-    <string name="support_rate">Avaliar o Gloam no Google Play</string>
-    <string name="support_rate_hint">Abre a página do Gloam no Google Play. Avaliar é opcional e não desbloqueia nada, porque nada no Gloam está bloqueado.</string>
+    <string name="support_no_mail_app">Não há aplicativo de e-mail neste celular para abrir. Você pode copiar o endereço acima.</string>
+    <string name="support_rate">Avaliar este aplicativo no Google Play</string>
+    <string name="support_rate_hint">Abre este aplicativo no Google Play. Avaliar é opcional e não desbloqueia nada.</string>
     <string name="support_no_play">Não há Google Play nem navegador neste celular para abrir.</string>
-    <string name="support_tip">Deixar uma gorjeta</string>
-    <string name="support_tip_hint">Uma gorjeta única para o desenvolvedor, paga pelo Google Play. Não desbloqueia nada, porque nada no Gloam está bloqueado.</string>
+    <string name="support_tip">Dar uma gorjeta ao desenvolvedor</string>
+    <string name="support_tip_hint">Uma gorjeta única, paga pelo Google Play. Não desbloqueia nada, porque nada neste aplicativo está bloqueado.</string>
     <string name="support_tip_thanks">Obrigado. Significa muito.</string>
-    <string name="support_tip_pending">Seu pagamento ainda está sendo processado. O Google Play vai concluí-lo.</string>
+    <string name="support_tip_pending">Seu pagamento ainda está em processamento. O Google Play vai concluí-lo.</string>
 
     <string name="licence_text_missing">O texto desta licença não vem junto com o aplicativo.</string>
+    <string name="support_address_hint">Escreva diretamente. Toque para copiar o endereço.</string>
+    <string name="support_no_browser">Não há navegador neste celular para abrir.</string>
+    <string name="support_site">Página do aplicativo na web</string>
+    <string name="support_privacy">Política de privacidade</string>
+    <string name="support_privacy_hint">Abre no seu navegador.</string>
+    <string name="support_credits">Créditos</string>
+    <string name="support_credits_hint">Licenças de código aberto</string>
+    <string name="support_more_apps">Mais aplicativos MaksForge</string>
+    <string name="support_more_apps_hint">Outros aplicativos gratuitos do mesmo desenvolvedor.</string>
+    <string name="support_version">Versão %1$s</string>
+    <string name="support_version_hint">Toque para copiar.</string>
+    <string name="support_copied">Copiado.</string>
 
     <string name="schedule_title">Programação</string>
     <string name="schedule_enable">Escurecer por programação</string>

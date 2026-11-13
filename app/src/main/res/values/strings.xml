@@ -253,13 +253,6 @@
     <string name="settings_language_italian" translatable="false">Italiano</string>
     <string name="settings_language_portuguese_br" translatable="false">Português (Brasil)</string>
     <string name="settings_language_ukrainian" translatable="false">Українська</string>
-    <!-- The report route, and it is the mechanism that replaces a native read-through rather than a
-         courtesy row (ADR-0014). It sits here, under the picker, because this is where someone is
-         standing the moment a word reads wrong — a channel nobody can find is the same as no
-         channel. The hint says the language travels with the mail, so nobody has to explain which
-         one they are reading. -->
-    <string name="settings_language_report">Something read wrong?</string>
-    <string name="settings_language_report_hint">Tell me if a word looks wrong in your language. Opens your email app, with the language you are reading already filled in.</string>
     <!-- Reboot restore, and the hand-off to Xiaomi's autostart screen. Shown only where that
          screen exists, which is what lets the second sentence say "this phone" — nobody whose
          phone has no such setting ever reads it. It promises nothing about the outcome: the app
@@ -279,46 +272,6 @@
     <string name="settings_restore_confirm_body">Dim level, warmth, colour, presets, the schedule and every other setting go back to how Gloam came, the language included. Presets you saved are deleted. This cannot be undone.</string>
     <string name="settings_restore_confirm">Restore</string>
     <string name="settings_restore_cancel">Cancel</string>
-
-    <string name="settings_about">About</string>
-    <string name="settings_support">Help and feedback</string>
-    <string name="settings_licences">Open-source licences</string>
-
-    <!-- Help and feedback. Both rows leave Gloam for the user's own mail app, so both hints say so
-         before the tap rather than after it. The two subjects are `translatable="false"` because
-         they carry a filter tag the developer sorts on and the user never reads — the prompt beside
-         each one is the sentence they actually see, and a Polish bug report under `Gloam #bug` is
-         the correct outcome of an app with a Polish locale. The prompts are second-person-free:
-         gender is not something the app knows (translator-brief.md 6.2). -->
-    <string name="support_title">Help and feedback</string>
-    <string name="support_report">Report a problem</string>
-    <string name="support_report_hint">Opens your email app with what Gloam knows about your phone already filled in.</string>
-    <string name="support_feature">Suggest a feature</string>
-    <string name="support_feature_hint">Every feature in Gloam is free and always will be, so the only question is whether it belongs.</string>
-    <string name="support_subject_bug" translatable="false">Gloam #bug</string>
-    <string name="support_subject_feature" translatable="false">Gloam #feature</string>
-    <!-- A tag of its own rather than #bug, because seven languages ship without a native
-         read-through (ADR-0014) and translation reports are the one kind of mail this release
-         expects in quantity. Sorting them apart is what lets a fluency fix be batched into one
-         string release instead of triaged one report at a time. -->
-    <string name="support_subject_language" translatable="false">Gloam #language</string>
-    <string name="support_body_bug">What happened, and what you expected instead:</string>
-    <string name="support_body_feature">What would you like Gloam to do?</string>
-    <!-- Asks for the screen as well as the word: a resource id means nothing to the sender, and
-         where they saw it is what turns a report into an edit. -->
-    <string name="support_body_language">Which word read wrong, and on which screen?</string>
-    <string name="support_no_mail_app">No email app on this phone to open.</string>
-    <string name="support_rate">Rate Gloam on Google Play</string>
-    <string name="support_rate_hint">Opens Gloam\'s page on Google Play. Rating is optional and unlocks nothing, because nothing in Gloam is locked.</string>
-    <string name="support_no_play">No Google Play or web browser on this phone to open.</string>
-    <!-- The tip (ADR-0009). A payment to a person that unlocks nothing; never "donate" or "support the project". -->
-    <string name="support_tip">Leave a tip</string>
-    <string name="support_tip_hint">A one-off tip to the developer, paid through Google Play. It unlocks nothing, because nothing in Gloam is locked.</string>
-    <string name="support_tip_thanks">Thank you. It means a lot.</string>
-    <string name="support_tip_pending">Your payment is still clearing. Google Play will finish it.</string>
-
-    <!-- Licences -->
-    <string name="licence_text_missing">The text of this licence is not bundled with the app.</string>
 
     <!-- The schedule (docs/phase-4.md §11). "Schedule", not "timer" or "alarm": CONTEXT.md reserves
          both — auto-off is not a timer because the schedule sets deadlines too, and nothing here is
@@ -414,4 +367,45 @@
          the shade and dim_backlight_hint is in the app underneath it - so it is short, and it names
          the symptom before the cause. -->
     <string name="shade_notification_text_backlight">Your brightness slider is paused while Gloam is dimming</string>
+
+    <!-- shared:support begin. Synced into every app by android-starter's scripts/sync-support.py:
+         change it there, never in an app. -->
+    <string name="settings_about">About</string>
+    <string name="settings_support">Help and feedback</string>
+    <string name="settings_licences">Open-source licences</string>
+    <string name="settings_language_report">Something read wrong?</string>
+    <string name="settings_language_report_hint">Tell me if a word looks wrong in your language. Opens your email app, with the language you are reading already filled in.</string>
+    <string name="support_title">Help and feedback</string>
+    <string name="support_report">Report a problem</string>
+    <string name="support_report_hint">Opens your email app with the app version, Android version, phone model and language filled in. Nothing is sent until you tap send.</string>
+    <string name="support_feature">Suggest a feature</string>
+    <string name="support_feature_hint">Say what you would like the app to do, and what you would use it for.</string>
+    <string name="support_body_bug">What happened, and what you expected instead:</string>
+    <string name="support_body_feature">What would you like the app to do?</string>
+    <string name="support_body_language">Which word read wrong, and on which screen?</string>
+    <string name="support_no_mail_app">No email app on this phone to open. You can copy the address above.</string>
+    <string name="support_address_hint">Write directly. Tap to copy the address.</string>
+    <string name="support_rate">Rate this app on Google Play</string>
+    <string name="support_rate_hint">Opens this app on Google Play. Rating is optional and unlocks nothing.</string>
+    <string name="support_no_play">No Google Play or web browser on this phone to open.</string>
+    <!-- The tip (ADR-0007): a payment to the developer that unlocks nothing. Never "donate" or
+         "support the project". The buttons are Play's own formatted prices, not strings -->
+    <string name="support_tip">Tip the developer</string>
+    <string name="support_tip_hint">A one-off tip, paid through Google Play. It unlocks nothing, because nothing in this app is locked.</string>
+    <string name="support_tip_thanks">Thank you. It means a lot.</string>
+    <string name="support_tip_pending">Your payment is still being processed. Google Play will finish it.</string>
+    <string name="licence_text_missing">The text of this licence is not bundled with the app.</string>
+    <string name="support_no_browser">No web browser on this phone to open.</string>
+    <string name="support_site">App web page</string>
+    <string name="support_privacy">Privacy policy</string>
+    <string name="support_privacy_hint">Opens in your browser.</string>
+    <string name="support_credits">Credits</string>
+    <string name="support_credits_hint">Open-source licences</string>
+    <string name="support_more_apps">More MaksForge apps</string>
+    <string name="support_more_apps_hint">Other free apps by the same developer.</string>
+    <!-- %1$s is the version, e.g. "1.4.0 (23)". -->
+    <string name="support_version">Version %1$s</string>
+    <string name="support_version_hint">Tap to copy.</string>
+    <string name="support_copied">Copied.</string>
+    <!-- shared:support end -->
 </resources>

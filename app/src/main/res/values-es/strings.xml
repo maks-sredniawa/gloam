@@ -158,22 +158,34 @@
 
     <string name="support_title">Ayuda y comentarios</string>
     <string name="support_report">Informar de un problema</string>
-    <string name="support_report_hint">Abre tu aplicación de correo con lo que Gloam ya sabe de tu teléfono rellenado.</string>
+    <string name="support_report_hint">Abre tu aplicación de correo con la versión de la aplicación, la versión de Android, el modelo del teléfono y el idioma ya rellenados. No se envía nada hasta que tocas «Enviar».</string>
     <string name="support_feature">Sugerir una función</string>
-    <string name="support_feature_hint">Todas las funciones de Gloam son gratuitas y siempre lo serán, así que la única pregunta es si encaja.</string>
+    <string name="support_feature_hint">Cuenta qué te gustaría que hiciera la aplicación y para qué lo usarías.</string>
     <string name="support_body_bug">Qué ocurrió y qué esperabas en su lugar:</string>
-    <string name="support_body_feature">¿Qué te gustaría que hiciera Gloam?</string>
+    <string name="support_body_feature">¿Qué te gustaría que hiciera la aplicación?</string>
     <string name="support_body_language">¿Qué palabra se lee mal y en qué pantalla?</string>
-    <string name="support_no_mail_app">En este teléfono no hay ninguna aplicación de correo que abrir.</string>
-    <string name="support_rate">Valorar Gloam en Google Play</string>
-    <string name="support_rate_hint">Abre la página de Gloam en Google Play. Valorar es opcional y no desbloquea nada, porque en Gloam no hay nada bloqueado.</string>
+    <string name="support_no_mail_app">En este teléfono no hay ninguna aplicación de correo que abrir. Puedes copiar la dirección de arriba.</string>
+    <string name="support_rate">Valorar esta aplicación en Google Play</string>
+    <string name="support_rate_hint">Abre esta aplicación en Google Play. Valorar es opcional y no desbloquea nada.</string>
     <string name="support_no_play">En este teléfono no hay Google Play ni navegador que abrir.</string>
-    <string name="support_tip">Dejar una propina</string>
-    <string name="support_tip_hint">Una propina única para el desarrollador, pagada con Google Play. No desbloquea nada, porque en Gloam no hay nada bloqueado.</string>
+    <string name="support_tip">Dar una propina al desarrollador</string>
+    <string name="support_tip_hint">Una propina única, pagada con Google Play. No desbloquea nada, porque en esta aplicación no hay nada bloqueado.</string>
     <string name="support_tip_thanks">Gracias. Significa mucho.</string>
-    <string name="support_tip_pending">Tu pago aún se está procesando. Google Play lo completará.</string>
+    <string name="support_tip_pending">Tu pago todavía se está procesando. Google Play lo completará.</string>
 
     <string name="licence_text_missing">El texto de esta licencia no se incluye con la aplicación.</string>
+    <string name="support_address_hint">Escribe directamente. Toca para copiar la dirección.</string>
+    <string name="support_no_browser">En este teléfono no hay ningún navegador que abrir.</string>
+    <string name="support_site">Página web de la aplicación</string>
+    <string name="support_privacy">Política de privacidad</string>
+    <string name="support_privacy_hint">Se abre en tu navegador.</string>
+    <string name="support_credits">Créditos</string>
+    <string name="support_credits_hint">Licencias de código abierto</string>
+    <string name="support_more_apps">Más aplicaciones de MaksForge</string>
+    <string name="support_more_apps_hint">Otras aplicaciones gratuitas del mismo desarrollador.</string>
+    <string name="support_version">Versión %1$s</string>
+    <string name="support_version_hint">Toca para copiar.</string>
+    <string name="support_copied">Copiado.</string>
 
     <string name="schedule_title">Horario</string>
     <string name="schedule_enable">Atenuar según un horario</string>
