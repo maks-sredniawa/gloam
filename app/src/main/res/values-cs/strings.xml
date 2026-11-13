@@ -160,7 +160,7 @@
     <string name="support_report">Nahlásit problém</string>
     <string name="support_report_hint">Otevře e-mailovou aplikaci s vyplněnou verzí aplikace, verzí Androidu, modelem telefonu a jazykem. Nic se neodešle, dokud neklepneš na „Odeslat“.</string>
     <string name="support_feature">Navrhnout funkci</string>
-    <string name="support_feature_hint">Napiš, co by aplikace měla umět a k čemu ji použiješ.</string>
+    <string name="support_feature_hint">Napiš, co by aplikace měla umět a k čemu by se ti to hodilo.</string>
     <string name="support_body_bug">Co se stalo a co se mělo stát místo toho:</string>
     <string name="support_body_feature">Co by aplikace měla umět?</string>
     <string name="support_body_language">Které slovo se čte špatně a na které obrazovce?</string>
