@@ -184,7 +184,10 @@
     <string name="support_privacy">Політика конфіденційності</string>
     <string name="support_privacy_hint">Відкривається в браузері.</string>
     <string name="support_credits">Подяки</string>
-    <string name="support_credits_hint">Ліцензії з відкритим кодом</string>
+    <string name="support_credits_hint">Хто створив застосунок і ліцензії з відкритим кодом</string>
+    <string name="credits_made_by">Хто створив застосунок</string>
+    <string name="credits_creator">Ідея та втілення</string>
+    <string name="credits_helped_by">Допомога</string>
     <string name="support_more_apps">Більше застосунків MaksForge</string>
     <string name="support_more_apps_hint">Інші безкоштовні застосунки того самого розробника.</string>
     <string name="support_version">Версія %1$s</string>

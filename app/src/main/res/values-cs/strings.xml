@@ -180,7 +180,10 @@
     <string name="support_privacy">Zásady ochrany osobních údajů</string>
     <string name="support_privacy_hint">Otevře se v prohlížeči.</string>
     <string name="support_credits">Poděkování</string>
-    <string name="support_credits_hint">Licence open source</string>
+    <string name="support_credits_hint">Kdo aplikaci vytvořil a licence open source</string>
+    <string name="credits_made_by">Kdo aplikaci vytvořil</string>
+    <string name="credits_creator">Nápad a provedení</string>
+    <string name="credits_helped_by">Pomoc</string>
     <string name="support_more_apps">Další aplikace MaksForge</string>
     <string name="support_more_apps_hint">Další bezplatné aplikace od stejného vývojáře.</string>
     <string name="support_version">Verze %1$s</string>
