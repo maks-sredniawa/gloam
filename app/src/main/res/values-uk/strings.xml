@@ -162,7 +162,7 @@
 
     <string name="support_title">Довідка та відгуки</string>
     <string name="support_report">Повідомити про проблему</string>
-    <string name="support_report_hint">Відкриває застосунок пошти з уже вписаними версією застосунку, версією Android, моделлю телефона і мовою. Нічого не надсилається, доки ти не торкнешся «Надіслати».</string>
+    <string name="support_report_hint">Відкриває застосунок пошти з уже вписаними версією застосунку, версією Android, моделлю телефона і мовою, але без жодних твоїх записів у застосунку. Нічого не надсилається, доки ти не торкнешся «Надіслати».</string>
     <string name="support_feature">Запропонувати функцію</string>
     <string name="support_feature_hint">Напиши, що мав би робити застосунок і для чого це тобі знадобиться.</string>
     <string name="support_body_bug">Що сталося і що мало статися замість цього:</string>
@@ -178,6 +178,10 @@
     <string name="support_tip_pending">Платіж усе ще обробляється. Google Play його завершить.</string>
 
     <string name="licence_text_missing">Текст цієї ліцензії не входить до складу застосунку.</string>
+    <string name="licences_intro">Цей застосунок побудовано на бібліотеках, перелічених нижче. Список створюється під час самої збірки, тож у ньому є все, що насправді містить ця копія застосунку.</string>
+    <string name="licences_read">Прочитати ліцензію</string>
+    <string name="licences_open_terms">Відкрити умови</string>
+    <string name="licences_unavailable">Не вдалося прочитати список ліцензій із цієї версії застосунку.</string>
     <string name="support_address_hint">Напиши напряму. Торкнися, щоб скопіювати адресу.</string>
     <string name="support_no_browser">У цьому телефоні немає браузера, який можна відкрити.</string>
     <string name="support_site">Вебсторінка застосунку</string>

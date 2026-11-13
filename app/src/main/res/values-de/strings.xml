@@ -158,7 +158,7 @@
 
     <string name="support_title">Hilfe und Rückmeldung</string>
     <string name="support_report">Problem melden</string>
-    <string name="support_report_hint">Öffnet deine E-Mail-App mit App-Version, Android-Version, Telefonmodell und Sprache schon eingetragen. Gesendet wird erst, wenn du auf „Senden“ tippst.</string>
+    <string name="support_report_hint">Öffnet deine E-Mail-App mit App-Version, Android-Version, Telefonmodell und Sprache schon eingetragen, aber ohne etwas von dem, was du in der App festhältst. Gesendet wird erst, wenn du auf „Senden“ tippst.</string>
     <string name="support_feature">Funktion vorschlagen</string>
     <string name="support_feature_hint">Schreib, was die App können soll und wofür du das nutzen würdest.</string>
     <string name="support_body_bug">Was ist passiert, und was hättest du stattdessen erwartet:</string>
@@ -174,6 +174,10 @@
     <string name="support_tip_pending">Deine Zahlung wird noch verarbeitet. Google Play wird sie abschließen.</string>
 
     <string name="licence_text_missing">Der Text dieser Lizenz ist nicht in der App enthalten.</string>
+    <string name="licences_intro">Diese App baut auf den unten aufgeführten Bibliotheken auf. Die Liste entsteht beim Erstellen der App selbst und nennt daher alles, was diese Version der App tatsächlich enthält.</string>
+    <string name="licences_read">Lizenz lesen</string>
+    <string name="licences_open_terms">Bedingungen öffnen</string>
+    <string name="licences_unavailable">Die Lizenzliste konnte aus dieser Version der App nicht gelesen werden.</string>
     <string name="support_address_hint">Schreib direkt. Tippe, um die Adresse zu kopieren.</string>
     <string name="support_no_browser">Auf diesem Telefon gibt es keinen Browser zum Öffnen.</string>
     <string name="support_site">Webseite der App</string>
