@@ -158,22 +158,34 @@
 
     <string name="support_title">Hilfe und Rückmeldung</string>
     <string name="support_report">Problem melden</string>
-    <string name="support_report_hint">Öffnet deine E-Mail-App, mit allem schon eingetragen, was Gloam über dein Telefon weiß.</string>
+    <string name="support_report_hint">Öffnet deine E-Mail-App mit App-Version, Android-Version, Telefonmodell und Sprache schon eingetragen. Gesendet wird erst, wenn du auf „Senden“ tippst.</string>
     <string name="support_feature">Funktion vorschlagen</string>
-    <string name="support_feature_hint">Jede Funktion in Gloam ist kostenlos und bleibt es, also ist die einzige Frage, ob sie hineinpasst.</string>
+    <string name="support_feature_hint">Schreib, was die App können soll und wofür du das nutzen würdest.</string>
     <string name="support_body_bug">Was ist passiert, und was hättest du stattdessen erwartet:</string>
-    <string name="support_body_feature">Was soll Gloam können?</string>
+    <string name="support_body_feature">Was soll die App können?</string>
     <string name="support_body_language">Welches Wort liest sich falsch, und auf welchem Bildschirm?</string>
-    <string name="support_no_mail_app">Auf diesem Telefon gibt es keine E-Mail-App zum Öffnen.</string>
-    <string name="support_rate">Gloam bei Google Play bewerten</string>
-    <string name="support_rate_hint">Öffnet die Seite von Gloam bei Google Play. Eine Bewertung ist freiwillig und schaltet nichts frei, weil in Gloam nichts gesperrt ist.</string>
+    <string name="support_no_mail_app">Auf diesem Telefon gibt es keine E-Mail-App zum Öffnen. Du kannst die Adresse oben kopieren.</string>
+    <string name="support_rate">Diese App bei Google Play bewerten</string>
+    <string name="support_rate_hint">Öffnet diese App bei Google Play. Eine Bewertung ist freiwillig und schaltet nichts frei.</string>
     <string name="support_no_play">Auf diesem Telefon gibt es weder Google Play noch einen Browser zum Öffnen.</string>
-    <string name="support_tip">Trinkgeld geben</string>
-    <string name="support_tip_hint">Ein einmaliges Trinkgeld für den Entwickler, bezahlt über Google Play. Es schaltet nichts frei, weil in Gloam nichts gesperrt ist.</string>
+    <string name="support_tip">Dem Entwickler Trinkgeld geben</string>
+    <string name="support_tip_hint">Ein einmaliges Trinkgeld, bezahlt über Google Play. Es schaltet nichts frei, weil in dieser App nichts gesperrt ist.</string>
     <string name="support_tip_thanks">Danke. Das bedeutet mir viel.</string>
-    <string name="support_tip_pending">Deine Zahlung wird noch verarbeitet. Google Play schließt sie ab.</string>
+    <string name="support_tip_pending">Deine Zahlung wird noch verarbeitet. Google Play wird sie abschließen.</string>
 
     <string name="licence_text_missing">Der Text dieser Lizenz ist nicht in der App enthalten.</string>
+    <string name="support_address_hint">Schreib direkt. Tippe, um die Adresse zu kopieren.</string>
+    <string name="support_no_browser">Auf diesem Telefon gibt es keinen Browser zum Öffnen.</string>
+    <string name="support_site">Webseite der App</string>
+    <string name="support_privacy">Datenschutzerklärung</string>
+    <string name="support_privacy_hint">Öffnet sich in deinem Browser.</string>
+    <string name="support_credits">Danksagungen</string>
+    <string name="support_credits_hint">Open-Source-Lizenzen</string>
+    <string name="support_more_apps">Weitere MaksForge-Apps</string>
+    <string name="support_more_apps_hint">Andere kostenlose Apps vom selben Entwickler.</string>
+    <string name="support_version">Version %1$s</string>
+    <string name="support_version_hint">Tippe zum Kopieren.</string>
+    <string name="support_copied">Kopiert.</string>
 
     <string name="schedule_title">Zeitplan</string>
     <string name="schedule_enable">Nach Zeitplan abdunkeln</string>

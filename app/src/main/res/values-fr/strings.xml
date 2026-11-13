@@ -159,22 +159,34 @@
 
     <string name="support_title">Aide et commentaires</string>
     <string name="support_report">Signaler un problème</string>
-    <string name="support_report_hint">Ouvre votre application de messagerie avec ce que Gloam sait déjà de votre téléphone, prérempli.</string>
+    <string name="support_report_hint">Ouvre votre application de messagerie avec la version de l\'application, la version d\'Android, le modèle du téléphone et la langue préremplis. Rien n\'est envoyé tant que vous n\'appuyez pas sur « Envoyer ».</string>
     <string name="support_feature">Proposer une fonctionnalité</string>
-    <string name="support_feature_hint">Toutes les fonctionnalités de Gloam sont gratuites et le resteront : la seule question est de savoir si elle a sa place ici.</string>
+    <string name="support_feature_hint">Dites ce que vous aimeriez que l\'application fasse, et à quoi cela vous servirait.</string>
     <string name="support_body_bug">Ce qui s\'est passé, et ce que vous attendiez à la place :</string>
-    <string name="support_body_feature">Qu\'aimeriez-vous que Gloam fasse ?</string>
+    <string name="support_body_feature">Qu\'aimeriez-vous que l\'application fasse ?</string>
     <string name="support_body_language">Quel mot se lit mal, et sur quel écran ?</string>
-    <string name="support_no_mail_app">Aucune application de messagerie à ouvrir sur ce téléphone.</string>
-    <string name="support_rate">Noter Gloam sur Google Play</string>
-    <string name="support_rate_hint">Ouvre la page de Gloam sur Google Play. Noter est facultatif et ne débloque rien, puisque rien n\'est verrouillé dans Gloam.</string>
+    <string name="support_no_mail_app">Aucune application de messagerie à ouvrir sur ce téléphone. Vous pouvez copier l\'adresse ci-dessus.</string>
+    <string name="support_rate">Noter cette application sur Google Play</string>
+    <string name="support_rate_hint">Ouvre cette application sur Google Play. Noter est facultatif et ne débloque rien.</string>
     <string name="support_no_play">Ni Google Play ni navigateur à ouvrir sur ce téléphone.</string>
-    <string name="support_tip">Laisser un pourboire</string>
-    <string name="support_tip_hint">Un pourboire ponctuel au développeur, payé via Google Play. Il ne débloque rien, puisque rien n\'est verrouillé dans Gloam.</string>
+    <string name="support_tip">Laisser un pourboire au développeur</string>
+    <string name="support_tip_hint">Un pourboire ponctuel, payé via Google Play. Il ne débloque rien, puisque rien n\'est verrouillé dans cette application.</string>
     <string name="support_tip_thanks">Merci. Ça compte beaucoup.</string>
-    <string name="support_tip_pending">Votre paiement est encore en cours. Google Play le finalisera.</string>
+    <string name="support_tip_pending">Votre paiement est toujours en cours de traitement. Google Play le finalisera.</string>
 
     <string name="licence_text_missing">Le texte de cette licence n\'est pas fourni avec l\'application.</string>
+    <string name="support_address_hint">Écrivez directement. Appuyez pour copier l\'adresse.</string>
+    <string name="support_no_browser">Aucun navigateur à ouvrir sur ce téléphone.</string>
+    <string name="support_site">Page web de l\'application</string>
+    <string name="support_privacy">Politique de confidentialité</string>
+    <string name="support_privacy_hint">S\'ouvre dans votre navigateur.</string>
+    <string name="support_credits">Crédits</string>
+    <string name="support_credits_hint">Licences open source</string>
+    <string name="support_more_apps">Plus d\'applications MaksForge</string>
+    <string name="support_more_apps_hint">D\'autres applications gratuites du même développeur.</string>
+    <string name="support_version">Version %1$s</string>
+    <string name="support_version_hint">Appuyez pour copier.</string>
+    <string name="support_copied">Copié.</string>
 
     <string name="schedule_title">Programmation</string>
     <string name="schedule_enable">Assombrir selon une programmation</string>

@@ -162,22 +162,34 @@
 
     <string name="support_title">Довідка та відгуки</string>
     <string name="support_report">Повідомити про проблему</string>
-    <string name="support_report_hint">Відкриває застосунок пошти з уже вписаним тим, що Gloam знає про твій телефон.</string>
+    <string name="support_report_hint">Відкриває застосунок пошти з уже вписаними версією застосунку, версією Android, моделлю телефона і мовою. Нічого не надсилається, доки ти не торкнешся «Надіслати».</string>
     <string name="support_feature">Запропонувати функцію</string>
-    <string name="support_feature_hint">Кожна функція в Gloam безкоштовна і завжди такою буде, тож єдине питання — чи вона тут доречна.</string>
+    <string name="support_feature_hint">Напиши, що мав би робити застосунок і навіщо це тобі.</string>
     <string name="support_body_bug">Що сталося і що мало статися замість цього:</string>
-    <string name="support_body_feature">Що Gloam міг би робити?</string>
+    <string name="support_body_feature">Що мав би робити застосунок?</string>
     <string name="support_body_language">Яке слово читається не так і на якому екрані?</string>
-    <string name="support_no_mail_app">У цьому телефоні немає застосунку пошти, який можна відкрити.</string>
-    <string name="support_rate">Оцінити Gloam у Google Play</string>
-    <string name="support_rate_hint">Відкриває сторінку Gloam у Google Play. Оцінювання добровільне і нічого не відкриває, бо в Gloam ніщо не закрите.</string>
+    <string name="support_no_mail_app">У цьому телефоні немає застосунку пошти, який можна відкрити. Можна скопіювати адресу вище.</string>
+    <string name="support_rate">Оцінити цей застосунок у Google Play</string>
+    <string name="support_rate_hint">Відкриває цей застосунок у Google Play. Оцінювання добровільне і нічого не відкриває.</string>
     <string name="support_no_play">У цьому телефоні немає ні Google Play, ні браузера, які можна відкрити.</string>
-    <string name="support_tip">Залишити чайові</string>
-    <string name="support_tip_hint">Одноразові чайові розробнику через Google Play. Вони нічого не відкривають, бо в Gloam ніщо не закрите.</string>
+    <string name="support_tip">Чайові розробнику</string>
+    <string name="support_tip_hint">Одноразові чайові через Google Play. Вони нічого не відкривають, бо в цьому застосунку ніщо не закрите.</string>
     <string name="support_tip_thanks">Дякую. Це багато для мене значить.</string>
-    <string name="support_tip_pending">Платіж ще обробляється. Google Play його завершить.</string>
+    <string name="support_tip_pending">Платіж усе ще обробляється. Google Play його завершить.</string>
 
     <string name="licence_text_missing">Текст цієї ліцензії не входить до складу застосунку.</string>
+    <string name="support_address_hint">Напиши напряму. Торкнися, щоб скопіювати адресу.</string>
+    <string name="support_no_browser">У цьому телефоні немає браузера, який можна відкрити.</string>
+    <string name="support_site">Вебсторінка застосунку</string>
+    <string name="support_privacy">Політика конфіденційності</string>
+    <string name="support_privacy_hint">Відкривається в браузері.</string>
+    <string name="support_credits">Подяки</string>
+    <string name="support_credits_hint">Ліцензії з відкритим кодом</string>
+    <string name="support_more_apps">Більше застосунків MaksForge</string>
+    <string name="support_more_apps_hint">Інші безкоштовні застосунки того самого розробника.</string>
+    <string name="support_version">Версія %1$s</string>
+    <string name="support_version_hint">Торкнися, щоб скопіювати.</string>
+    <string name="support_copied">Скопійовано.</string>
 
     <string name="schedule_title">Розклад</string>
     <string name="schedule_enable">Затемнювати за розкладом</string>

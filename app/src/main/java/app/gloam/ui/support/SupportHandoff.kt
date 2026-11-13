@@ -8,64 +8,44 @@ import androidx.annotation.StringRes
 import androidx.core.net.toUri
 import app.gloam.BuildConfig
 import app.gloam.R
-import app.gloam.work.startActivitySafely
-
-/**
- * Where a report goes, and it is **frozen the day a build leaves this machine**.
- *
- * An address on the developer's own domain rather than a mailbox at a provider, because a sideloaded
- * APK is never forced to update: whatever string is compiled in here keeps being mailed for as long
- * as any build survives. The domain's routing can point anywhere, and be handed to another
- * maintainer without handing over anyone's mail.
- *
- * The Play listing's contact field is the same address — two routes is one more than anybody needs.
- */
-private const val SUPPORT_ADDRESS = "gloam.support@maksforge.com"
-
-/**
- * The id Play knows this app by — **a fact about the listing rather than about this build.**
- *
- * A literal rather than `BuildConfig.APPLICATION_ID`, because debug builds carry
- * `applicationIdSuffix = ".debug"` so they install beside a Play copy, and Play has never heard of
- * the suffixed id. Deriving it by stripping the suffix would work and would write the suffix down in
- * two places.
- */
-private const val PLAY_PACKAGE = "io.github.srednimax.gloam"
+import app.gloam.ui.common.startActivitySafely
 
 /** The Play app itself, which is the only store this app is listed in. */
 private const val PLAY_STORE_APP = "com.android.vending"
 
+/** Every MaksForge app, on the one page that lists them all. Shared by every app, unlike [SupportConfig]. */
+private const val MORE_APPS_URL = "https://maksforge.com/"
+
 /**
- * The two things a user can send, as a lookup table.
+ * The things a user can send, as a lookup table.
  *
- * An enum rather than two `@StringRes` parameters on [sendSupportMail], because the subject and the
- * prompt are a **pair**: a bug subject over a feature prompt is a mail that sorts into the wrong
- * folder and reads as a mistake, and separate parameters are exactly the shape that lets it happen.
- * Same idiom as `AppChannel` — an enum carrying its own constants instead of a `when` mapping two
- * of them together at the call site.
+ * The subject's tag and the prompt are a **pair**: a bug subject over a feature prompt is a mail that
+ * sorts into the wrong folder and reads as a mistake, and separate parameters are exactly the shape
+ * that lets it happen.
  *
- * **The subject is `translatable="false"` and the prompt is not.** The subject carries a filter tag
- * the developer sorts on and the user never reads; the prompt is a sentence addressed to them. A
- * Polish bug report arriving under `Gloam #bug` is the correct outcome of an app with a Polish
- * locale, not a bug in this pairing.
+ * **The tag is never translated and the prompt is.** The tag is what you sort your own mail on and the
+ * user never reads; the prompt is a sentence addressed to them. A Polish bug report arriving under
+ * "`<MAIL_TAG> #bug`" is the correct outcome of an app with a Polish locale.
  */
 enum class SupportRequest(
-    @param:StringRes val subject: Int,
+    val tag: String,
     @param:StringRes val prompt: Int,
 ) {
-    Bug(R.string.support_subject_bug, R.string.support_body_bug),
-    Feature(R.string.support_subject_feature, R.string.support_body_feature),
+    Bug("bug", R.string.support_body_bug),
+    Feature("feature", R.string.support_body_feature),
 
     /**
      * A word that reads wrong in the user's own language.
      *
-     * **Reached from Settings' *Language* section, not from the Support screen** — which is why
-     * [SupportScreen] names the two requests it shows instead of rendering `entries`. It is the
-     * channel that stands in for a native read-through (ADR-0014), and it belongs beside the picker
-     * because that is where somebody is standing the moment a translation reads wrong. A second row
-     * for it on Support would only ask the user to choose between two words for the same thing.
+     * **Reached from Settings' *Language* section, not from the Support screen**, through
+     * [LanguageReportRow]. It is the channel that stands in for a native read-through
+     * (`docs/translator-brief.md` §8), and it belongs beside the picker because that is where somebody
+     * is standing the moment a translation reads wrong.
      */
-    Language(R.string.support_subject_language, R.string.support_body_language),
+    Language("language", R.string.support_body_language),
+    ;
+
+    val subject: String get() = "${SupportConfig.MAIL_TAG} #$tag"
 }
 
 /**
@@ -91,8 +71,8 @@ enum class SupportRequest(
 fun Context.sendSupportMail(request: SupportRequest): Boolean {
     val uri =
         (
-            "mailto:$SUPPORT_ADDRESS" +
-                "?subject=" + Uri.encode(getString(request.subject)) +
+            "mailto:${SupportConfig.SUPPORT_ADDRESS}" +
+                "?subject=" + Uri.encode(request.subject) +
                 "&body=" + Uri.encode(supportMailBody(getString(request.prompt)))
         ).toUri()
     return startActivitySafely(Intent(Intent.ACTION_SENDTO, uri))
@@ -103,37 +83,51 @@ fun Context.sendSupportMail(request: SupportRequest): Boolean {
  *
  * **Not a third [SupportRequest].** That enum is what a *mail* is made of, and a rating is not mail.
  *
- * **An `https://` link pinned to the Play app, not `market://`.** That is a device finding (Phase 5,
- * D): on HyperOS the `market` scheme is also claimed by Xiaomi's own store, so an unpinned
- * `market://` tap opens the system chooser with that store listed first — and Gloam is not in it.
- * `setPackage` is the platform's way of saying *this app and no other*; with it, the launch either
- * opens Play or throws `ActivityNotFoundException` because Play is not installed. The `https` link
- * is the same one either way, so the fallback is that link unpinned, which a browser answers.
+ * **An `https://` link pinned to the Play app, not `market://`.** That is a device finding: on
+ * HyperOS the `market` scheme is also claimed by Xiaomi's own store, so an unpinned `market://` tap
+ * opens the system chooser with that store listed first — and the app is not in it. `setPackage` is
+ * the platform's way of saying *this app and no other*; with it, the launch either opens Play or
+ * throws `ActivityNotFoundException` because Play is not installed. The `https` link is the same one
+ * either way, so the fallback is that link unpinned, which a browser answers.
  *
  * @return whether anything opened, the same contract as [sendSupportMail].
  */
 fun Context.rateOnPlay(): Boolean {
-    val listing = "https://play.google.com/store/apps/details?id=$PLAY_PACKAGE".toUri()
+    val listing = "https://play.google.com/store/apps/details?id=${SupportConfig.PLAY_PACKAGE}".toUri()
     val inPlay = Intent(Intent.ACTION_VIEW, listing).setPackage(PLAY_STORE_APP)
     return startActivitySafely(inPlay) || startActivitySafely(Intent(Intent.ACTION_VIEW, listing))
 }
 
+/** The app's page on maksforge.com, in the browser. */
+fun Context.openSite(): Boolean = openInBrowser(SupportConfig.SITE_URL)
+
+fun Context.openPrivacyPolicy(): Boolean = openInBrowser("${SupportConfig.SITE_URL}privacy-policy")
+
+fun Context.openMoreApps(): Boolean = openInBrowser(MORE_APPS_URL)
+
+private fun Context.openInBrowser(url: String): Boolean = startActivitySafely(Intent(Intent.ACTION_VIEW, url.toUri()))
+
+val versionNumber: String get() = "${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})"
+
+/** What the Version row copies, and the first line of a report's facts. */
+fun Context.versionLine(): String = "${getString(R.string.app_name)} $versionNumber"
+
 /**
- * The prompt, room to write, and the six facts a bug report always needs and a reporter never has to
+ * The prompt, room to write, and the facts a bug report always needs and a reporter never has to
  * hand.
  *
  * Composed from [BuildConfig] and [Build] — nothing read here that the app does not already know
  * about itself, and nothing that needs a permission. It is not a privacy question in the ordinary
- * sense either: Gloam declares no `INTERNET` permission and has no route off the device, so this is
- * the *user's own* mail, composed in their client, visible to them before they send it and deletable
- * line by line.
+ * sense either: this app declares no `INTERNET` permission and has no route off the device, so this
+ * is the *user's own* mail, composed in their client, visible to them before they send it and
+ * deletable line by line.
  *
  * `app_name` rather than a literal, because the debug source set overrides it — a report from a
- * sideloaded debug build says *Gloam debug* and is told apart from a Play one at a glance.
+ * sideloaded debug build carries the debug label and is told apart from a Play one at a glance.
  *
  * The version block is deliberately **not** in `strings.xml`: it is data rather than prose, there is
- * nothing in it a translator could improve, and `translator-brief.md` §4 keeps exactly this kind of
- * string out of their hands.
+ * nothing in it a translator could improve, and `docs/translator-brief.md` §4 keeps exactly this
+ * kind of string out of their hands.
  */
 private fun Context.supportMailBody(prompt: String): String =
     buildString {
@@ -141,7 +135,7 @@ private fun Context.supportMailBody(prompt: String): String =
         appendLine()
         appendLine()
         appendLine("---")
-        appendLine("${getString(R.string.app_name)} ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})")
+        appendLine(versionLine())
         appendLine("Android ${Build.VERSION.RELEASE} (SDK ${Build.VERSION.SDK_INT})")
         appendLine("${Build.MANUFACTURER} ${Build.MODEL}")
         // The **resolved** locale, which is the one the sender is actually reading, rather than

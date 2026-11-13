@@ -2,7 +2,6 @@ package app.gloam.ui.support
 
 import android.app.Activity
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
@@ -20,19 +19,20 @@ import kotlinx.coroutines.launch
 
 /**
  * @param offers the tips Play will sell here, cheapest first. Empty means no tip section at all.
- * @param outcome what the last tip from this screen turned into, or `null` before one finishes.
+ * @param outcome what the last tip from this screen became, or `null` before one finishes.
  */
 data class SupportUiState(
     val offers: List<TipOffer> = emptyList(),
     val outcome: TipOutcome? = null,
 )
 
+/** The tip's half of Support (ADR-0007); every other row on the screen is stateless. */
 class SupportViewModel(
     private val tipJar: TipJar,
 ) : ViewModel() {
     private val outcome = MutableStateFlow<TipOutcome?>(null)
 
-    val state: StateFlow<SupportUiState> =
+    val uiState: StateFlow<SupportUiState> =
         combine(tipJar.offers, outcome, ::SupportUiState)
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), SupportUiState())
 
@@ -41,10 +41,7 @@ class SupportViewModel(
         viewModelScope.launch { tipJar.outcomes.collect { outcome.value = it } }
     }
 
-    /**
-     * The activity is passed straight through to Play's sheet and never kept: launching the sheet
-     * needs one, and a `ViewModel` that held it would outlive it.
-     */
+    /** The activity goes straight to Play's sheet and is never kept: a `ViewModel` outlives it. */
     fun tip(
         activity: Activity,
         offer: TipOffer,
@@ -54,7 +51,7 @@ class SupportViewModel(
     }
 
     companion object {
-        val Factory: ViewModelProvider.Factory =
+        val Factory =
             viewModelFactory {
                 initializer {
                     val app = this[APPLICATION_KEY] as MainApplication
