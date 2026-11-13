@@ -156,7 +156,7 @@
 
     <string name="support_title">Aiuto e commenti</string>
     <string name="support_report">Segnala un problema</string>
-    <string name="support_report_hint">Apre la tua app di posta con versione dell\'app, versione di Android, modello del telefono e lingua già inseriti, e niente di ciò che hai registrato nell\'app. Non viene inviato nulla finché non tocchi “Invia”.</string>
+    <string name="support_report_hint">Apre la tua app di posta con versione dell\'app, versione di Android, modello del telefono e lingua già inseriti, senza nulla di ciò che hai registrato nell\'app. Non viene inviato nulla finché non tocchi “Invia”.</string>
     <string name="support_feature">Proponi una funzione</string>
     <string name="support_feature_hint">Scrivi cosa vorresti che l\'app facesse e a cosa ti servirebbe.</string>
     <string name="support_body_bug">Cosa è successo e cosa ti aspettavi invece:</string>
