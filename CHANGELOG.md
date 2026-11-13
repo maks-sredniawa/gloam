@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.7.0](https://github.com/maks-sredniawa/gloam/compare/v1.6.0...v1.7.0) (2026-11-13)
+
+
+### Features
+
+* **support:** adopt the shared Help and feedback from android-starter ([901dc2e](https://github.com/maks-sredniawa/gloam/commit/901dc2ed985d084e16ad49c11c4cda660836853a))
+* **support:** link licence terms and show licence names on Credits ([9396cf3](https://github.com/maks-sredniawa/gloam/commit/9396cf30900fbf168898f0b958666fc05d182532))
+* **support:** sync Credits with the people who made the app and translate it ([c06813b](https://github.com/maks-sredniawa/gloam/commit/c06813b40ba767ccc0e713f0c387084407067b2e))
+
+
+### Bug Fixes
+
+* **support:** point the SupportConfig KDoc at real sources and polish the es, uk and cs support copy ([9b88bdd](https://github.com/maks-sredniawa/gloam/commit/9b88bdd5771097ca901882d34f9e9cb1e06a2771))
+* **support:** say when the language report finds no mail app, and keep the licence screen safe ([2158900](https://github.com/maks-sredniawa/gloam/commit/215890061484e59a13673ed2692b97b63af4f509))
+* **support:** word the es and it report hint's exclusion naturally ([10de33f](https://github.com/maks-sredniawa/gloam/commit/10de33f3e04c260739c4a386c3b7cd1623f23c4e))
+
 ## [1.6.0](https://github.com/maksforge/gloam/compare/v1.5.0...v1.6.0) (2026-10-31)
 
 
