@@ -169,6 +169,7 @@
     <string name="support_body_feature">Що мав би робити застосунок?</string>
     <string name="support_body_language">Яке слово читається не так і на якому екрані?</string>
     <string name="support_no_mail_app">У цьому телефоні немає застосунку пошти, який можна відкрити. Можна скопіювати адресу вище.</string>
+    <string name="support_no_mail_app_write_to">У цьому телефоні немає застосунку пошти, який можна відкрити. Можна написати на %1$s.</string>
     <string name="support_rate">Оцінити цей застосунок у Google Play</string>
     <string name="support_rate_hint">Відкриває цей застосунок у Google Play. Оцінювання добровільне і нічого не відкриває.</string>
     <string name="support_no_play">У цьому телефоні немає ні Google Play, ні браузера, які можна відкрити.</string>

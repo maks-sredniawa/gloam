@@ -165,6 +165,7 @@
     <string name="support_body_feature">Co by aplikace měla umět?</string>
     <string name="support_body_language">Které slovo se čte špatně a na které obrazovce?</string>
     <string name="support_no_mail_app">V tomto telefonu není e-mailová aplikace, kterou by šlo otevřít. Adresu výše si můžeš zkopírovat.</string>
+    <string name="support_no_mail_app_write_to">V tomto telefonu není e-mailová aplikace, kterou by šlo otevřít. Můžeš napsat na %1$s.</string>
     <string name="support_rate">Ohodnotit tuto aplikaci na Google Play</string>
     <string name="support_rate_hint">Otevře tuto aplikaci na Google Play. Hodnocení je dobrovolné a nic neodemyká.</string>
     <string name="support_no_play">V tomto telefonu není Google Play ani prohlížeč, který by šlo otevřít.</string>
