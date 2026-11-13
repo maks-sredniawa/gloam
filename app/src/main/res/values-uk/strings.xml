@@ -164,7 +164,7 @@
     <string name="support_report">Повідомити про проблему</string>
     <string name="support_report_hint">Відкриває застосунок пошти з уже вписаними версією застосунку, версією Android, моделлю телефона і мовою. Нічого не надсилається, доки ти не торкнешся «Надіслати».</string>
     <string name="support_feature">Запропонувати функцію</string>
-    <string name="support_feature_hint">Напиши, що мав би робити застосунок і навіщо це тобі.</string>
+    <string name="support_feature_hint">Напиши, що мав би робити застосунок і для чого це тобі знадобиться.</string>
     <string name="support_body_bug">Що сталося і що мало статися замість цього:</string>
     <string name="support_body_feature">Що мав би робити застосунок?</string>
     <string name="support_body_language">Яке слово читається не так і на якому екрані?</string>
