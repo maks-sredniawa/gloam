@@ -158,7 +158,7 @@
 
     <string name="support_title">Ayuda y comentarios</string>
     <string name="support_report">Informar de un problema</string>
-    <string name="support_report_hint">Abre tu aplicación de correo con la versión de la aplicación, la versión de Android, el modelo del teléfono y el idioma ya rellenados, y nada de lo que hayas registrado en la aplicación. No se envía nada hasta que tocas «Enviar».</string>
+    <string name="support_report_hint">Abre tu aplicación de correo con la versión de la aplicación, la versión de Android, el modelo del teléfono y el idioma ya rellenados, sin nada de lo que hayas registrado en la aplicación. No se envía nada hasta que tocas «Enviar».</string>
     <string name="support_feature">Sugerir una función</string>
     <string name="support_feature_hint">Cuenta qué te gustaría que hiciera la aplicación y para qué lo usarías.</string>
     <string name="support_body_bug">Qué ocurrió y qué esperabas en su lugar:</string>
