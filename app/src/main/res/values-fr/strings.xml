@@ -159,7 +159,7 @@
 
     <string name="support_title">Aide et commentaires</string>
     <string name="support_report">Signaler un problème</string>
-    <string name="support_report_hint">Ouvre votre application de messagerie avec la version de l\'application, la version d\'Android, le modèle du téléphone et la langue préremplis. Rien n\'est envoyé tant que vous n\'appuyez pas sur « Envoyer ».</string>
+    <string name="support_report_hint">Ouvre votre application de messagerie avec la version de l\'application, la version d\'Android, le modèle du téléphone et la langue préremplis, sans rien de ce que vous avez enregistré dans l\'application. Rien n\'est envoyé tant que vous n\'appuyez pas sur « Envoyer ».</string>
     <string name="support_feature">Proposer une fonctionnalité</string>
     <string name="support_feature_hint">Dites ce que vous aimeriez que l\'application fasse, et à quoi cela vous servirait.</string>
     <string name="support_body_bug">Ce qui s\'est passé, et ce que vous attendiez à la place :</string>
@@ -175,6 +175,10 @@
     <string name="support_tip_pending">Votre paiement est toujours en cours de traitement. Google Play le finalisera.</string>
 
     <string name="licence_text_missing">Le texte de cette licence n\'est pas fourni avec l\'application.</string>
+    <string name="licences_intro">Cette application repose sur les bibliothèques ci-dessous. La liste est générée par la compilation elle-même : elle nomme donc tout ce que contient réellement cette copie de l\'application.</string>
+    <string name="licences_read">Lire la licence</string>
+    <string name="licences_open_terms">Ouvrir les conditions</string>
+    <string name="licences_unavailable">Impossible de lire la liste des licences dans cette version de l\'application.</string>
     <string name="support_address_hint">Écrivez directement. Appuyez pour copier l\'adresse.</string>
     <string name="support_no_browser">Aucun navigateur à ouvrir sur ce téléphone.</string>
     <string name="support_site">Page web de l\'application</string>

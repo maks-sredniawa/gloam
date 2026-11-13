@@ -156,7 +156,7 @@
 
     <string name="support_title">Aiuto e commenti</string>
     <string name="support_report">Segnala un problema</string>
-    <string name="support_report_hint">Apre la tua app di posta con versione dell\'app, versione di Android, modello del telefono e lingua già inseriti. Non viene inviato nulla finché non tocchi “Invia”.</string>
+    <string name="support_report_hint">Apre la tua app di posta con versione dell\'app, versione di Android, modello del telefono e lingua già inseriti, e niente di ciò che hai registrato nell\'app. Non viene inviato nulla finché non tocchi “Invia”.</string>
     <string name="support_feature">Proponi una funzione</string>
     <string name="support_feature_hint">Scrivi cosa vorresti che l\'app facesse e a cosa ti servirebbe.</string>
     <string name="support_body_bug">Cosa è successo e cosa ti aspettavi invece:</string>
@@ -172,6 +172,10 @@
     <string name="support_tip_pending">Il pagamento è ancora in corso di elaborazione. Google Play lo completerà.</string>
 
     <string name="licence_text_missing">Il testo di questa licenza non è incluso nell\'app.</string>
+    <string name="licences_intro">Questa app si basa sulle librerie elencate qui sotto. L\'elenco viene generato dalla compilazione stessa, quindi include tutto ciò che questa copia dell\'app contiene davvero.</string>
+    <string name="licences_read">Leggi la licenza</string>
+    <string name="licences_open_terms">Apri i termini</string>
+    <string name="licences_unavailable">Non è stato possibile leggere l\'elenco delle licenze da questa versione dell\'app.</string>
     <string name="support_address_hint">Scrivi direttamente. Tocca per copiare l\'indirizzo.</string>
     <string name="support_no_browser">Su questo telefono non c\'è un browser da aprire.</string>
     <string name="support_site">Pagina web dell\'app</string>
