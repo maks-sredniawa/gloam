@@ -180,7 +180,10 @@
     <string name="support_privacy">Datenschutzerklärung</string>
     <string name="support_privacy_hint">Öffnet sich in deinem Browser.</string>
     <string name="support_credits">Danksagungen</string>
-    <string name="support_credits_hint">Open-Source-Lizenzen</string>
+    <string name="support_credits_hint">Wer die App gemacht hat und Open-Source-Lizenzen</string>
+    <string name="credits_made_by">Wer die App gemacht hat</string>
+    <string name="credits_creator">Idee und Umsetzung</string>
+    <string name="credits_helped_by">Mit Hilfe von</string>
     <string name="support_more_apps">Weitere MaksForge-Apps</string>
     <string name="support_more_apps_hint">Andere kostenlose Apps vom selben Entwickler.</string>
     <string name="support_version">Version %1$s</string>

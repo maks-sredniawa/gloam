@@ -181,7 +181,10 @@
     <string name="support_privacy">Politique de confidentialité</string>
     <string name="support_privacy_hint">S\'ouvre dans votre navigateur.</string>
     <string name="support_credits">Crédits</string>
-    <string name="support_credits_hint">Licences open source</string>
+    <string name="support_credits_hint">Qui a fait l\'application et licences open source</string>
+    <string name="credits_made_by">Qui a fait l\'application</string>
+    <string name="credits_creator">Idée et réalisation</string>
+    <string name="credits_helped_by">Avec l\'aide de</string>
     <string name="support_more_apps">Plus d\'applications MaksForge</string>
     <string name="support_more_apps_hint">D\'autres applications gratuites du même développeur.</string>
     <string name="support_version">Version %1$s</string>
