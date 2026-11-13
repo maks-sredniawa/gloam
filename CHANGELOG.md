@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/maks-sredniawa/gloam/compare/v1.7.0...v1.7.1) (2026-11-13)
+
+
+### Bug Fixes
+
+* keep the helpers heading in release builds, and read no-break spaces as text in aab-locale ([39ed225](https://github.com/maks-sredniawa/gloam/commit/39ed2253405d855e4aa56dc04fca218b855cd670))
+
 ## [1.7.0](https://github.com/maks-sredniawa/gloam/compare/v1.6.0...v1.7.0) (2026-11-13)
 
 
