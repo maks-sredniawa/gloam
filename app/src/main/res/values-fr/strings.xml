@@ -166,6 +166,7 @@
     <string name="support_body_feature">Qu\'aimeriez-vous que l\'application fasse ?</string>
     <string name="support_body_language">Quel mot se lit mal, et sur quel écran ?</string>
     <string name="support_no_mail_app">Aucune application de messagerie à ouvrir sur ce téléphone. Vous pouvez copier l\'adresse ci-dessus.</string>
+    <string name="support_no_mail_app_write_to">Aucune application de messagerie à ouvrir sur ce téléphone. Vous pouvez écrire à %1$s.</string>
     <string name="support_rate">Noter cette application sur Google Play</string>
     <string name="support_rate_hint">Ouvre cette application sur Google Play. Noter est facultatif et ne débloque rien.</string>
     <string name="support_no_play">Ni Google Play ni navigateur à ouvrir sur ce téléphone.</string>

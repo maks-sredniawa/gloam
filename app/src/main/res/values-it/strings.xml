@@ -163,6 +163,7 @@
     <string name="support_body_feature">Cosa vorresti che l\'app facesse?</string>
     <string name="support_body_language">Quale parola si legge male, e su quale schermata?</string>
     <string name="support_no_mail_app">Su questo telefono non c\'è un\'app di posta da aprire. Puoi copiare l\'indirizzo qui sopra.</string>
+    <string name="support_no_mail_app_write_to">Su questo telefono non c\'è un\'app di posta da aprire. Puoi scrivere a %1$s.</string>
     <string name="support_rate">Valuta questa app su Google Play</string>
     <string name="support_rate_hint">Apre questa app su Google Play. Valutare è facoltativo e non sblocca nulla.</string>
     <string name="support_no_play">Su questo telefono non c\'è né Google Play né un browser da aprire.</string>
